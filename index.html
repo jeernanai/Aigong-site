@@ -1,397 +1,326 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI GONG ($AIGONG) — Luxury Gold Web3</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>AIGONG — The Rich Sleepers Society | Sit Back, Earn Big</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0; padding: 0; background-color: #09090B; color: #F4F4F5;
-      font-family: 'Noto Sans Thai', sans-serif;
-      overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch;
+    :root {
+      --bg: #08090b;
+      --surface: #101216;
+      --surface-elevated: #161920;
+      --text: #f5f2eb;
+      --muted: #9ea4b0;
+      --gold: #dfc07b;
+      --gold-bright: #f0d79c;
+      --gold-glow: rgba(223, 192, 123, 0.16);
+      --border-gold: rgba(223, 192, 123, 0.28);
+      --border-line: rgba(255, 255, 255, 0.08);
     }
-    .font-luxury { font-family: 'Cinzel', 'Noto Sans Thai', serif; }
-    .gold-text {
-      background: linear-gradient(135deg, #FDE68A, #F59E0B, #D97706);
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:
+        radial-gradient(circle at 82% 14%, rgba(223, 192, 123, 0.09), transparent 42%),
+        radial-gradient(circle at 15% 78%, rgba(223, 192, 123, 0.05), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 9, 11, 0.84);
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .nav-wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px; gap: 20px;
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: var(--text);
+    }
+
+    .brand img {
+      width: 42px; height: 42px; border-radius: 50%;
+      object-fit: cover; border: 1px solid var(--border-gold);
+    }
+
+    .brand-name {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.34rem; font-weight: 700;
+      letter-spacing: 0.12em; color: var(--gold);
+    }
+
+    nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    nav a {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.9rem; font-weight: 500; transition: color 0.22s ease;
+    }
+    nav a:hover { color: var(--gold-bright); }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: #08090b; font-weight: 600; font-size: 0.92rem;
+      text-decoration: none; border: none;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      box-shadow: 0 8px 24px rgba(223, 192, 123, 0.16);
+    }
+    .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(223, 192, 123, 0.24); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 22px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02); color: var(--text);
+      font-weight: 500; font-size: 0.92rem; text-decoration: none;
+      border: 1px solid var(--border-line);
+      transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+    }
+    .btn-ghost:hover {
+      border-color: var(--border-gold);
+      color: var(--gold-bright);
+      background: var(--gold-glow);
+    }
+
+    .hero { padding: 84px 0 72px; border-bottom: 1px solid var(--border-line); }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); background: var(--gold-glow);
+      border: 1px solid var(--border-gold); padding: 7px 14px;
+      border-radius: 999px; margin-bottom: 20px; font-weight: 600;
+    }
+
+    h1 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2.6rem, 5.2vw, 4.25rem);
+      font-weight: 700; line-height: 1.05;
+      letter-spacing: -0.015em; margin-bottom: 18px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .gold-card {
-      background: #121215; border: 1px solid rgba(245, 158, 11, 0.3);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+    .hero-copy { color: var(--muted); font-size: 1.05rem; max-width: 565px; margin-bottom: 30px; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+    .emblem-card {
+      background: linear-gradient(160deg, var(--surface-elevated), var(--surface));
+      border: 1px solid var(--border-gold); border-radius: 28px;
+      padding: 32px 28px; text-align: center;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
     }
-    .gold-btn {
-      background: linear-gradient(135deg, #FBBF24, #D97706);
-      color: #09090B; font-weight: 700;
+    .emblem-card img {
+      width: 224px; height: 224px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--gold); margin-bottom: 18px;
+    }
+    .emblem-title {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: 1.42rem; font-weight: 700; color: var(--gold-bright);
+      letter-spacing: 0.06em;
+    }
+    .emblem-sub { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
+
+    section.block { padding: 76px 0; border-bottom: 1px solid var(--border-line); }
+    .sec-head { margin-bottom: 36px; }
+    .sec-label {
+      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px; font-weight: 600;
+    }
+    h2 {
+      font-family: 'Bodoni Moda', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700; line-height: 1.12;
+    }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      background: linear-gradient(180deg, rgba(22, 25, 32, 0.72), var(--surface));
+      border: 1px solid var(--border-line); border-radius: 22px; padding: 26px;
+      transition: border-color 0.22s ease, transform 0.22s ease;
+    }
+    .card:hover { border-color: var(--border-gold); transform: translateY(-2px); }
+    .card h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 10px; color: var(--gold-bright); }
+    .card p { color: var(--muted); font-size: 0.94rem; }
+
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
+    .metric {
+      background: var(--surface); border: 1px solid var(--border-line);
+      border-radius: 20px; padding: 22px;
+    }
+    .metric .k { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+    .metric .v { font-size: 1.38rem; font-weight: 700; color: var(--gold-bright); }
+
+    .contract-box {
+      background: linear-gradient(135deg, rgba(223, 192, 123, 0.08), var(--surface));
+      border: 1px solid var(--border-gold); border-radius: 20px;
+      padding: 20px 24px; display: flex; align-items: center;
+      justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .contract-addr {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9rem; color: var(--text); word-break: break-all;
+    }
+    .copy-btn {
+      padding: 10px 18px; border-radius: 12px; border: 1px solid var(--border-gold);
+      background: var(--gold-glow); color: var(--gold-bright);
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .copy-btn:hover { background: rgba(223, 192, 123, 0.24); }
+
+    footer {
+      padding: 38px 0; color: var(--muted); font-size: 0.86rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-copy { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 620px) {
+      nav { display: none; }
+      .metrics { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-  <!-- แถบเมนูนำทาง 5 หน้า -->
-  <header class="sticky top-0 z-50 bg-[#09090B]/95 border-b border-amber-500/20 px-4 py-3">
-    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
-      <div class="font-luxury font-bold text-amber-300 text-lg">AI GONG ($AIGONG)</div>
-      <nav class="flex flex-wrap gap-2 text-xs sm:text-sm">
-        <button onclick="showPage('home')" class="nav-btn px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-400/40">1. หน้าหลัก</button>
-        <button onclick="showPage('about')" class="nav-btn px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300">2. เรื่องราว</button>
-        <button onclick="showPage('tokenomics')" class="nav-btn px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300">3. โทเคนโนมิกส์</button>
-        <button onclick="showPage('roadmap')" class="nav-btn px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300">4. แผนงาน</button>
-        <button onclick="showPage('community')" class="nav-btn px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300">5. ชุมชน & สัญญา</button>
-      </nav>
-    </div>
-  </header>
-
-  <main class="max-w-5xl mx-auto px-4 py-8">
-
-    <!-- ==================== หน้าที่ 1: HOME (หน้าหลัก) ==================== -->
-    <section id="page-home" class="page-section space-y-6">
-      <div class="gold-card rounded-3xl p-6 sm:p-10 space-y-5">
-        <span class="inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs">
-          BNB Smart Chain (BEP-20) • ซัพพลาย 8,888,000,000 • ภาษี 0%
-        </span>
-        <h1 class="font-luxury text-3xl sm:text-5xl font-extrabold leading-tight">
-          <span class="gold-text">AI GONG ($AIGONG)</span><br>
-          <span class="text-white text-xl sm:text-3xl font-semibold">เสียงฆ้องทองคำแห่งยุค AI & ศิลปะแห่งความขี้เกียจอย่างมีระดับ</span>
-        </h1>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-          ผสานเทคโนโลยีปัญญาประดิษฐ์ (AI) เข้ากับสัญลักษณ์ "ฆ้องทองคำ" แห่งการเปิดศักราชและความมั่งคั่ง สร้างระบบนิเวศเหรียญมีมระดับลักชัวรีที่เรียบง่าย โปร่งใส และเติบโตไปพร้อมชุมชนทั่วโลก
-        </p>
-
-        <!-- กล่องเลขสัญญา -->
-        <div class="p-4 rounded-xl bg-zinc-950 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div class="text-xs">
-            <div class="text-zinc-400">Smart Contract (BEP-20):</div>
-            <div class="font-mono text-amber-300 break-all mt-0.5">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
-          </div>
-          <button onclick="copyContract()" class="gold-btn px-4 py-2 rounded-lg text-xs shrink-0">คัดลอกเลขสัญญา</button>
-        </div>
-      </div>
-
-      <!-- จุดเด่น 3 ข้อ -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="gold-card rounded-2xl p-5 space-y-1.5">
-          <div class="text-amber-300 font-bold">AI + ฆ้องทองคำ</div>
-          <p class="text-zinc-300 text-sm">สัญลักษณ์ของการตีฆ้องเรียกทรัพย์และพลังขับเคลื่อนยุคดิจิทัล</p>
-        </div>
-        <div class="gold-card rounded-2xl p-5 space-y-1.5">
-          <div class="text-amber-300 font-bold">Luxury Laziness</div>
-          <p class="text-zinc-300 text-sm">ปรัชญาความขี้เกียจอย่างมีชั้นเชิง ถือครองอย่างสบายใจไม่ต้องเฝ้ากราฟทั้งวัน</p>
-        </div>
-        <div class="gold-card rounded-2xl p-5 space-y-1.5">
-          <div class="text-amber-300 font-bold">0% Buy / 0% Sell Tax</div>
-          <p class="text-zinc-300 text-sm">ไม่หักภาษีซื้อหรือขายบนสัญญาหลัก โอนและแลกเปลี่ยนได้อย่างอิสระ</p>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== หน้าที่ 2: ABOUT (เรื่องราว AI GONG) ==================== -->
-    <section id="page-about" class="page-section hidden space-y-6">
-      <div class="gold-card rounded-3xl p-6 sm:p-10 space-y-5">
-        <h2 class="font-luxury text-2xl sm:text-4xl font-bold gold-text">เรื่องราวและแนวคิดของ AI GONG</h2>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-          <strong class="text-amber-300">AI + ฆ้องทองคำ:</strong> สัญลักษณ์ของการลั่นฆ้องเปิดศักราชใหม่ ผสานเข้ากับความชาญฉลาดของปัญญาประดิษฐ์ (AI) สื่อถึงพลังแห่งความมั่งคั่งและการขับเคลื่อนในโลกดิจิทัล
-        </p>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-          <strong class="text-amber-300">ศิลปะแห่ง "ความขี้เกียจอย่างมีระดับ" (Luxury Laziness):</strong> แนวคิดที่เปลี่ยนการถือครองสินทรัพย์ให้ดูสง่างามและผ่อนคลาย ไม่ต้องวุ่นวายเฝ้าหน้าจอตลอดเวลา แต่ปล่อยให้คอมมูนิตี้และกระแสความนิยมทำงานแทน
-        </p>
-        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
-          <strong class="text-amber-300">เลขมงคล 8,888,000,000:</strong> เลข 8 เรียงซ้ำสื่อถึงความอุดมสมบูรณ์ไม่มีที่สิ้นสุด คู่กับภาพลักษณ์สีทอง-ดำที่เรียบหรูและโดดเด่น
-        </p>
-      </div>
-    </section>
-
-    <!-- ==================== หน้าที่ 3: TOKENOMICS (โทเคนโนมิกส์) ==================== -->
-    <section id="page-tokenomics" class="page-section hidden space-y-6">
-      <div class="gold-card rounded-3xl p-6 sm:p-10 space-y-6">
-        <h2 class="font-luxury text-2xl sm:text-4xl font-bold gold-text">โครงสร้างโทเคนโนมิกส์ ($AIGONG)</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/25">
-            <div class="text-xs text-zinc-400">ชื่อและสัญลักษณ์</div>
-            <div class="text-lg font-bold text-amber-300 mt-1">AI GONG ($AIGONG)</div>
-          </div>
-          <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/25">
-            <div class="text-xs text-zinc-400">เครือข่าย (Network)</div>
-            <div class="text-lg font-bold text-white mt-1">BNB Smart Chain (BEP-20)</div>
-          </div>
-          <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/25">
-            <div class="text-xs text-zinc-400">ซัพพลายทั้งหมด (Total Supply)</div>
-            <div class="text-lg font-bold text-amber-300 mt-1">8,888,000,000 $AIGONG</div>
-          </div>
-          <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/25">
-            <div class="text-xs text-zinc-400">ภาษีซื้อ / ขาย (Tax)</div>
-            <div class="text-lg font-bold text-emerald-400 mt-1">0% Buy / 0% Sell</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ==================== หน้าที่ 4: ROADMAP (แผนงาน 4 เฟส) ==================== -->
-    <section id="page-roadmap" class="page-section hidden space-y-6">
-      <div class="gold-card rounded-3xl p-6 sm:p-10 space-y-6">
-        <h2 class="font-luxury text-2xl sm:text-4xl font-bold gold-text">แผนการดำเนินงาน (Roadmap)</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl bg-zinc-950 border border-amber-500/25 space-y-1.5">
-            <div class="text-amber-300 font-bold">Phase 1 — Foundation</div>
-            <p class="text-zinc-300 text-sm">เปิดตัว Smart Contract บนเครือข่าย BNB Smart Chain (BEP-20) และสร้างฐานสภาพคล่องเริ่มต้น</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-zinc-950 border border-amber-500/25 space-y-1.5">
-            <div class="text-amber-300 font-bold">Phase 2 — Official Portal</div>
-            <p class="text-zinc-300 text-sm">เปิดเว็บไซต์ทางการของ AI GONG ($AIGONG) พร้อมระบบนิเวศและช่องทางสื่อสารหลัก</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-zinc-950 border border-amber-500/25 space-y-1.5">
-            <div class="text-amber-300 font-bold">Phase 3 — Global Indexing</div>
-            <p class="text-zinc-300 text-sm">อัปเดตข้อมูลและโลโก้บน BscScan, Trust Wallet, CoinGecko และ CoinMarketCap</p>
-          </div>
-          <div class="p-5 rounded-2xl bg-zinc-950 border border-amber-500/25 space-y-1.5">
-            <div class="text-amber-300 font-bold">Phase 4 — Expansion</div>
-            <p class="text-zinc-300 text-sm">ขยายฐานผู้ถือครองระดับสากลและผลักดันสู่แพลตฟอร์มการซื้อขายชั้นนำ</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== หน้าที่ 5: COMMUNITY & CONTRACT (ชุมชน & สัญญา) ==================== -->
-    <section id="page-community" class="page-section hidden space-y-6">
-      <div class="gold-card rounded-3xl p-6 sm:p-10 space-y-6">
-        <h2 class="font-luxury text-2xl sm:text-4xl font-bold gold-text">ข้อมูลสัญญาอย่างเป็นทางการ & ชุมชน</h2>
-        <p class="text-zinc-300 text-sm sm:text-base">
-          ตรวจสอบข้อมูลบนบล็อกเชนได้ตลอด 24 ชั่วโมง โปรดตรวจสอบเลขสัญญาด้านล่างให้ถูกต้องทุกครั้งก่อนทำรายการ
-        </p>
-        <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/30 space-y-3">
-          <div class="text-xs text-zinc-400">Official BEP-20 Contract Address:</div>
-          <div class="font-mono text-amber-300 text-xs sm:text-sm break-all">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
-          <div class="flex flex-wrap gap-2 pt-1">
-            <button onclick="copyContract()" class="gold-btn px-4 py-2 rounded-lg text-xs">คัดลอกเลขสัญญา</button>
-            <a href="https://bscscan.com/token/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140" target="_blank" class="px-4 py-2 rounded-lg bg-zinc-800 text-zinc-200 text-xs">ดูบน BscScan</a>
-            <a href="https://dexscreener.com/bsc/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140" target="_blank" class="px-4 py-2 rounded-lg bg-zinc-800 text-zinc-200 text-xs">ดูกราฟ DexScreener</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ส่วนท้ายเว็บ -->
-  <footer class="border-t border-amber-500/20 px-4 py-6 text-center text-xs text-zinc-500">
-    AI GONG ($AIGONG) • BNB Smart Chain (BEP-20) • Total Supply: 8,888,000,000
-  </footer>
-
-  <!-- สคริปต์สลับหน้าและคัดลอกเลขสัญญา -->
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
-      document.getElementById('page-' + pageId).classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    function copyContract() {
-      navigator.clipboard.writeText('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140');
-      alert('คัดลอกเลขสัญญา 0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140 เรียบร้อยแล้ว');
-    }
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ซื้อขายตรง $AIGONG ($0.003 USDT) — Direct Treasury Sale</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0; padding: 0; background-color: #09090B; color: #F4F4F5;
-      font-family: 'Noto Sans Thai', sans-serif;
-      overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch;
-    }
-    .font-luxury { font-family: 'Cinzel', 'Noto Sans Thai', serif; }
-    .gold-text {
-      background: linear-gradient(135deg, #FDE68A, #F59E0B, #D97706);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .gold-card {
-      background: #121215; border: 1px solid rgba(245, 158, 11, 0.3);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-    .gold-btn {
-      background: linear-gradient(135deg, #FBBF24, #D97706);
-      color: #09090B; font-weight: 700;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- แถบเมนูด้านบน -->
-  <header class="sticky top-0 z-50 bg-[#09090B]/95 border-b border-amber-500/20 px-4 py-3">
-    <div class="max-w-4xl mx-auto flex items-center justify-between gap-3">
-      <div class="font-luxury font-bold text-amber-300 text-base sm:text-lg">AI GONG — DIRECT SALE</div>
-      <a href="index.html" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 border border-amber-400/40 text-amber-200 text-xs sm:text-sm">
-        ← กลับหน้าหลัก 5 หน้า
+  <header>
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="AIGONG Emblem" />
+        <span class="brand-name">AIGONG</span>
       </a>
+      <nav>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="buy.html">Chart &amp; Buy</a>
+      </nav>
+      <a href="buy.html" class="btn-gold">Launch Terminal</a>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 py-8 space-y-6">
-
-    <!-- หัวข้อและโควตา 5% -->
-    <div class="gold-card rounded-3xl p-6 space-y-4">
-      <span class="inline-block px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs">
-        โควตาพิเศษ 5% (444,400,000 $AIGONG) • ราคาคงที่ $0.003 USDT • ไม่ผ่านพูล LP
-      </span>
-      <h1 class="font-luxury text-2xl sm:text-4xl font-bold gold-text">ซื้อขายตรง $AIGONG ราคา $0.003 USDT</h1>
-      <p class="text-zinc-300 text-sm">
-        เปรียบเทียบราคาตลาดสดของ Binance Web3 ณ วินาทีนี้ และทำรายการซื้อตรงเข้ากระเป๋าโปรเจกต์บนเครือข่าย BNB Smart Chain (BEP-20)
-      </p>
-
-      <!-- เปรียบเทียบราคาตลาดสด vs ราคาขายตรง -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-        <div class="p-4 rounded-2xl bg-zinc-950 border border-zinc-800">
-          <div class="text-xs text-zinc-400">ราคาตลาด Binance สด (ณ ตอนนี้)</div>
-          <div id="live-market-price" class="text-xl font-bold text-emerald-400 mt-1">$0.0041626 USDT</div>
-          <div id="price-status" class="text-[11px] text-zinc-500 mt-0.5">กำลังดึงราคาตลาดสด...</div>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">The Rich Sleepers Society • BNB Smart Chain</span>
+          <h1>Sit Back, <span>Earn Big</span>.<br />Cosmic Laziness, Refined.</h1>
+          <p class="hero-copy">
+            AIGONG pairs quiet-luxury restraint with cultural momentum—built for holders who value
+            composure, zero-tax clarity, and effortless presence across the 2027 market cycle.
+          </p>
+          <div class="hero-actions">
+            <a href="buy.html" class="btn-gold">Open Chart &amp; Direct Buy</a>
+            <a href="#tokenomics" class="btn-ghost">Explore Tokenomics</a>
+          </div>
         </div>
-        <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/50">
-          <div class="text-xs text-amber-300">ราคาขายตรงหน้าเว็บ (ล็อกเรท)</div>
-          <div class="text-xl font-bold text-amber-300 mt-1">$0.0030000 USDT</div>
-          <div id="discount-badge" class="text-[11px] text-amber-200 mt-0.5">ประหยัดกว่าตลาด ~27.9%</div>
+        <div class="emblem-card">
+          <img src="logo.png" alt="AIGONG Gold Sloth Emblem" />
+          <div class="emblem-title">AIGONG SOCIETY</div>
+          <div class="emblem-sub">Sit Back • Earn Big • BEP-20</div>
         </div>
       </div>
-    </div>
-    <!-- กล่องคำนวณและทำรายการซื้อตรง -->
-    <div class="gold-card rounded-3xl p-6 space-y-5">
-      <div class="space-y-2">
-        <label for="usdt-input" class="block text-sm font-semibold text-amber-300">
-          ระบุจำนวน USDT ที่ต้องการจ่าย (เครือข่าย BNB Smart Chain / BEP-20)
-        </label>
-        <input
-          id="usdt-input"
-          type="number"
-          min="0"
-          step="any"
-          value="300"
-          oninput="updateCalc()"
-          class="w-full px-4 py-3 rounded-xl bg-zinc-950 border border-amber-500/40 text-white text-lg font-bold focus:outline-none focus:border-amber-300"
-        />
-        <div class="grid grid-cols-4 gap-2 pt-1">
-          <button type="button" onclick="setUsdt(50)" class="py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-amber-200">50 USDT</button>
-          <button type="button" onclick="setUsdt(200)" class="py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-amber-200">200 USDT</button>
-          <button type="button" onclick="setUsdt(500)" class="py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-amber-200">500 USDT</button>
-          <button type="button" onclick="setUsdt(1000)" class="py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 text-xs text-amber-200">1,000 USDT</button>
+    </section>
+
+    <section id="philosophy" class="block">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-label">Cosmic Laziness Philosophy</div>
+          <h2>Composure Over Chaos</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h3>The Rich Sleepers Mindset</h3>
+            <p>While noise spikes and fades, The Rich Sleepers Society holds with calm conviction and unhurried focus.</p>
+          </div>
+          <div class="card">
+            <h3>Quiet Luxury Craft</h3>
+            <p>Deep obsidian surfaces, champagne gold accents, and editorial typography give AIGONG an unmistakable presence.</p>
+          </div>
+          <div class="card">
+            <h3>Frictionless BEP-20</h3>
+            <p>Zero buy or sell tax paired with a dedicated live chart and direct USDT acquisition terminal on BNB Smart Chain.</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- ผลลัพธ์การคำนวณ -->
-      <div class="p-4 rounded-2xl bg-zinc-950 border border-amber-500/30 space-y-2 text-sm">
-        <div class="flex justify-between">
-          <span class="text-zinc-400">เหรียญ $AIGONG ที่ได้รับ (@ $0.003):</span>
-          <span id="calc-tokens" class="font-bold text-amber-300">100,000.00 $AIGONG</span>
+    <section id="tokenomics" class="block">
+      <div class="container">
+        <div class="sec-head">
+          <div class="sec-label">On-Chain Specification</div>
+          <h2>AIGONG Tokenomics</h2>
         </div>
-        <div class="flex justify-between">
-          <span class="text-zinc-400">มูลค่าเทียบเท่าราคาตลาด Binance สด:</span>
-          <span id="calc-market-val" class="font-semibold text-emerald-400">416.26 USDT</span>
+        <div class="metrics">
+          <div class="metric">
+            <div class="k">Total Supply</div>
+            <div class="v">8,888,000,000</div>
+          </div>
+          <div class="metric">
+            <div class="k">Buy / Sell Tax</div>
+            <div class="v">0% / 0%</div>
+          </div>
+          <div class="metric">
+            <div class="k">Network</div>
+            <div class="v">BNB Smart Chain</div>
+          </div>
+          <div class="metric">
+            <div class="k">Token Standard</div>
+            <div class="v">BEP-20</div>
+          </div>
         </div>
-        <div class="flex justify-between pt-2 border-t border-zinc-800">
-          <span class="text-zinc-300">ส่วนต่างความคุ้มค่าเทียบราคาตลาดตอนนี้:</span>
-          <span id="calc-diff" class="font-bold text-amber-300">+116.26 USDT</span>
+
+        <div class="contract-box">
+          <div>
+            <div style="font-size: 0.78rem; color: var(--muted); margin-bottom: 4px;">Official $AIGONG Contract Address (BEP-20)</div>
+            <div class="contract-addr" id="contractAddr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
+          </div>
+          <button type="button" class="copy-btn" onclick="copyContract(this)">Copy Contract</button>
         </div>
       </div>
-
-      <!-- เลขกระเป๋ารับเงินของโปรเจกต์ -->
-      <div class="p-4 rounded-2xl bg-zinc-950 border border-zinc-800 space-y-2">
-        <div class="text-xs text-zinc-400">กระเป๋ารับเงินโปรเจกต์ (รับเฉพาะ USDT บนเครือข่าย BNB Smart Chain / BEP-20):</div>
-        <div class="font-mono text-xs sm:text-sm text-amber-300 break-all">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
-        <button type="button" onclick="copyWallet()" class="gold-btn px-4 py-2 rounded-lg text-xs">
-          คัดลอกเลขกระเป๋ารับเงิน
-        </button>
-      </div>
-
-      <!-- ปุ่มยืนยันและบันทึกสแนปช็อตเรทตลาด ณ เวลาที่ทำรายการ -->
-      <button type="button" onclick="lockOrderSnapshot()" class="gold-btn w-full py-3.5 rounded-xl text-sm sm:text-base">
-        ยืนยันคำสั่งซื้อ & ล็อกเรทตลาด Binance ณ วินาทีนี้
-      </button>
-
-      <div id="order-result" class="hidden p-4 rounded-xl bg-emerald-950/50 border border-emerald-500/40 text-xs sm:text-sm text-emerald-200 space-y-1"></div>
-    </div>
-
+    </section>
   </main>
 
-  <footer class="border-t border-amber-500/20 px-4 py-6 text-center text-xs text-zinc-500">
-    AI GONG ($AIGONG) • Direct Sale Quota: 444,400,000 (5%) @ $0.003 USDT
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+      <span>© 2027 AIGONG — The Rich Sleepers Society. Sit Back, Earn Big.</span>
+      <span>Domain: aigong.store</span>
+    </div>
   </footer>
 
   <script>
-    const AIGONG_CONTRACT = '0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140';
-    const TREASURY_WALLET = '0x603406b7128d45A79E91c74b56dB7E2fc8918ad3';
-    const DIRECT_PRICE = 0.003;
-    let currentBinancePrice = 0.0041626;
-
-    function fmt(n, d = 2) {
-      return Number(n || 0).toLocaleString('en-US', {
-        minimumFractionDigits: d,
-        maximumFractionDigits: d
+    function copyContract(btn) {
+      const addr = document.getElementById('contractAddr').textContent.trim();
+      navigator.clipboard.writeText(addr).then(() => {
+        const prev = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(() => { btn.textContent = prev; }, 1600);
       });
     }
-
-    function setUsdt(val) {
-      document.getElementById('usdt-input').value = val;
-      updateCalc();
-    }
-
-    function updateCalc() {
-      const usdt = Math.max(0, parseFloat(document.getElementById('usdt-input').value) || 0);
-      const tokens = usdt / DIRECT_PRICE;
-      const marketVal = tokens * currentBinancePrice;
-      const diff = Math.max(0, marketVal - usdt);
-      const pct = currentBinancePrice > 0 ? Math.max(0, Math.round(((currentBinancePrice - DIRECT_PRICE) / currentBinancePrice) * 100)) : 0;
-
-      document.getElementById('calc-tokens').textContent = `${fmt(tokens, 2)} $AIGONG`;
-      document.getElementById('calc-market-val').textContent = `${fmt(marketVal, 2)} USDT`;
-      document.getElementById('calc-diff').textContent = `+${fmt(diff, 2)} USDT`;
-      document.getElementById('discount-badge').textContent = `ประหยัดกว่าตลาด ~${pct}%`;
-    }
-
-    async function fetchLivePrice() {
-      try {
-        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${AIGONG_CONTRACT}`, { cache: 'no-store' });
-        const data = await res.json();
-        const pair = (data?.pairs || []).find((p) => p.chainId === 'bsc' && parseFloat(p.priceUsd) > 0);
-        if (pair) {
-          currentBinancePrice = parseFloat(pair.priceUsd);
-          document.getElementById('live-market-price').textContent = `$${currentBinancePrice.toFixed(7)} USDT`;
-          document.getElementById('price-status').textContent = `อัปเดตสดเวลา ${new Date().toLocaleTimeString('th-TH')}`;
-          updateCalc();
-          return;
-        }
-      } catch (_) {}
-      document.getElementById('price-status').textContent = `อ้างอิงเรทล่าสุดเวลา ${new Date().toLocaleTimeString('th-TH')}`;
-    }
-
-    function copyWallet() {
-      navigator.clipboard.writeText(TREASURY_WALLET);
-      alert('คัดลอกเลขกระเป๋ารับเงิน ' + TREASURY_WALLET + ' เรียบร้อยแล้ว');
-    }
-
-    function lockOrderSnapshot() {
-      const usdt = Math.max(0, parseFloat(document.getElementById('usdt-input').value) || 0);
-      if (usdt <= 0) {
-        alert('กรุณาระบุจำนวน USDT ให้มากกว่า 0');
-        return;
-      }
-      const tokens = usdt / DIRECT_PRICE;
-      const marketVal = tokens * currentBinancePrice;
-      const box = document.getElementById('order-result');
-      box.classList.remove('hidden');
-      box.innerHTML = `
-        <div class="font-bold">บันทึกรายการ & ล็อกเรทตลาดเรียบร้อย</div>
-        <div>ยอดจ่าย: <strong>${fmt(usdt, 2)} USDT</strong> (BEP-20) → รับ <strong>${fmt(tokens, 2)} $AIGONG</strong> (@ $0.003)</div>
-        <div>ราคาตลาด Binance ณ วินาทีที่ทำรายการ: <strong>$${currentBinancePrice.toFixed(7)} USDT</strong> (มูลค่าอ้างอิง ${fmt(marketVal, 2)} USDT)</div>
-        <div>โอน USDT เข้ากระเป๋า: <span class="font-mono">${TREASURY_WALLET}</span></div>
-      `;
-    }
-
-    updateCalc();
-    fetchLivePrice();
-    setInterval(fetchLivePrice, 10000);
   </script>
 </body>
 </html>
