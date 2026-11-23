@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIGONG — The Rich Sleepers Society | Sit Back, Earn Big</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Buy &amp; Live Chart — AIGONG | The Rich Sleepers Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #08090b;
@@ -15,312 +15,789 @@
       --text: #f5f2eb;
       --muted: #9ea4b0;
       --gold: #dfc07b;
-      --gold-bright: #f0d79c;
+      --gold-bright: #f4dc9e;
       --gold-glow: rgba(223, 192, 123, 0.16);
       --border-gold: rgba(223, 192, 123, 0.28);
       --border-line: rgba(255, 255, 255, 0.08);
+      --green: #38d399;
+      --red: #f26d6d;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      background:
-        radial-gradient(circle at 82% 14%, rgba(223, 192, 123, 0.09), transparent 42%),
-        radial-gradient(circle at 15% 78%, rgba(223, 192, 123, 0.05), transparent 45%),
-        var(--bg);
+      background-color: var(--bg);
       color: var(--text);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 50% -10%, rgba(223, 192, 123, 0.15), transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(223, 192, 123, 0.06), transparent 45%);
     }
 
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
     header {
-      position: sticky; top: 0; z-index: 40;
-      backdrop-filter: blur(18px);
-      background: rgba(8, 9, 11, 0.84);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 9, 11, 0.86);
       border-bottom: 1px solid var(--border-line);
     }
 
     .nav-wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 76px; gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 14px;
     }
 
     .brand {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none; color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
     }
 
     .brand img {
-      width: 42px; height: 42px; border-radius: 50%;
-      object-fit: cover; border: 1px solid var(--border-gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border-gold);
     }
 
     .brand-name {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: 1.34rem; font-weight: 700;
-      letter-spacing: 0.12em; color: var(--gold);
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.16em;
+      color: var(--gold-bright);
+      font-weight: 700;
     }
 
-    nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-    nav a {
-      text-decoration: none; color: var(--muted);
-      font-size: 0.9rem; font-weight: 500; transition: color 0.22s ease;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    nav a:hover { color: var(--gold-bright); }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--gold-bright);
+    }
 
     .btn-gold {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 12px 24px; border-radius: 999px;
-      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-      color: #08090b; font-weight: 600; font-size: 0.92rem;
-      text-decoration: none; border: none;
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-      box-shadow: 0 8px 24px rgba(223, 192, 123, 0.16);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f4dc9e 0%, #cfa756 100%);
+      color: #090a0d;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(223, 192, 123, 0.24); }
 
-    .btn-ghost {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 12px 22px; border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02); color: var(--text);
-      font-weight: 500; font-size: 0.92rem; text-decoration: none;
-      border: 1px solid var(--border-line);
-      transition: border-color 0.22s ease, color 0.22s ease, background 0.22s ease;
+    .btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(223, 192, 123, 0.28);
     }
-    .btn-ghost:hover {
-      border-color: var(--border-gold);
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
       color: var(--gold-bright);
+      font-weight: 600;
+      font-size: 0.86rem;
+      text-decoration: none;
+      border: 1px solid var(--border-gold);
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
       background: var(--gold-glow);
     }
 
-    .hero { padding: 84px 0 72px; border-bottom: 1px solid var(--border-line); }
-    .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; }
-
-    .pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold); background: var(--gold-glow);
-      border: 1px solid var(--border-gold); padding: 7px 14px;
-      border-radius: 999px; margin-bottom: 20px; font-weight: 600;
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 0 18px;
+      flex-wrap: wrap;
     }
 
-    h1 {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: clamp(2.6rem, 5.2vw, 4.25rem);
-      font-weight: 700; line-height: 1.05;
-      letter-spacing: -0.015em; margin-bottom: 18px;
-    }
-    h1 span {
-      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    .pair-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .hero-copy { color: var(--muted); font-size: 1.05rem; max-width: 565px; margin-bottom: 30px; }
-    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .pair-title h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
 
-    .emblem-card {
-      background: linear-gradient(160deg, var(--surface-elevated), var(--surface));
-      border: 1px solid var(--border-gold); border-radius: 28px;
-      padding: 32px 28px; text-align: center;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-    }
-    .emblem-card img {
-      width: 224px; height: 224px; border-radius: 50%;
-      object-fit: cover; border: 2px solid var(--gold); margin-bottom: 18px;
-    }
-    .emblem-title {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: 1.42rem; font-weight: 700; color: var(--gold-bright);
+    .badge {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-gold);
+      background: rgba(223, 192, 123, 0.08);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
       letter-spacing: 0.06em;
     }
-    .emblem-sub { color: var(--muted); font-size: 0.88rem; margin-top: 6px; }
 
-    section.block { padding: 76px 0; border-bottom: 1px solid var(--border-line); }
-    .sec-head { margin-bottom: 36px; }
-    .sec-label {
-      font-size: 0.76rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 10px; font-weight: 600;
-    }
-    h2 {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 700; line-height: 1.12;
+    .terminal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(290px, 0.85fr) minmax(320px, 0.95fr);
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 24px;
     }
 
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
     .card {
-      background: linear-gradient(180deg, rgba(22, 25, 32, 0.72), var(--surface));
-      border: 1px solid var(--border-line); border-radius: 22px; padding: 26px;
-      transition: border-color 0.22s ease, transform 0.22s ease;
-    }
-    .card:hover { border-color: var(--border-gold); transform: translateY(-2px); }
-    .card h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 10px; color: var(--gold-bright); }
-    .card p { color: var(--muted); font-size: 0.94rem; }
-
-    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 24px; }
-    .metric {
-      background: var(--surface); border: 1px solid var(--border-line);
-      border-radius: 20px; padding: 22px;
-    }
-    .metric .k { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
-    .metric .v { font-size: 1.38rem; font-weight: 700; color: var(--gold-bright); }
-
-    .contract-box {
-      background: linear-gradient(135deg, rgba(223, 192, 123, 0.08), var(--surface));
-      border: 1px solid var(--border-gold); border-radius: 20px;
-      padding: 20px 24px; display: flex; align-items: center;
-      justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    }
-    .contract-addr {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.9rem; color: var(--text); word-break: break-all;
-    }
-    .copy-btn {
-      padding: 10px 18px; border-radius: 12px; border: 1px solid var(--border-gold);
-      background: var(--gold-glow); color: var(--gold-bright);
-      font-size: 0.85rem; font-weight: 600; cursor: pointer;
-      transition: background 0.2s ease;
-    }
-    .copy-btn:hover { background: rgba(223, 192, 123, 0.24); }
-
-    footer {
-      padding: 38px 0; color: var(--muted); font-size: 0.86rem;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
+      background: var(--surface);
+      border: 1px solid var(--border-line);
+      border-radius: 18px;
+      padding: 18px;
     }
 
-    @media (max-width: 920px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-copy { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-line);
     }
 
-    @media (max-width: 620px) {
-      nav { display: none; }
-      .metrics { grid-template-columns: 1fr; }
+    .card-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    .chart-box {
+      width: 100%;
+      height: 540px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+      background: #0b0d11;
+    }
+
+    .chart-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .stat-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-line);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .stat-val {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tf-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tf-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-line);
+      border-radius: 10px;
+      padding: 9px 6px;
+      text-align: center;
+    }
+
+    .tf-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .tf-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .pos { color: var(--green); }
+    .neg { color: var(--red); }
+
+    .kv-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .kv-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      background: var(--surface-elevated);
+    }
+
+    .kv-row span:first-child {
+      color: var(--muted);
+    }
+
+    .kv-row span:last-child {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .swap-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .swap-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .swap-input-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .swap-input-row input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-size: 1.25rem;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .token-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(223, 192, 123, 0.12);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-bright);
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .preset-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .preset-btn {
+      padding: 7px 6px;
+      border-radius: 10px;
+      border: 1px solid var(--border-line);
+      background: var(--surface-elevated);
+      color: var(--gold-bright);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .preset-btn:hover {
+      border-color: var(--border-gold);
+      background: var(--gold-glow);
+    }
+
+    .action-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .status-line {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--gold-bright);
+      min-height: 20px;
+      word-break: break-word;
+    }
+
+    .addr-card {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+
+    .addr-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .addr-mini {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.76rem;
+      color: var(--text);
+      word-break: break-all;
+    }
+
+    .copy-mini {
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+      background: rgba(223, 192, 123, 0.12);
+      color: var(--gold-bright);
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1120px) {
+      .terminal-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .chart-card {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .terminal-grid {
+        grid-template-columns: 1fr;
+      }
+      .chart-box {
+        height: 380px;
+      }
+      nav {
+        gap: 12px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <img src="logo.png" alt="AIGONG Emblem" />
+      <a href="index.html" class="brand">
+        <img src="logo.png.jpeg" alt="AIGONG Logo" />
         <span class="brand-name">AIGONG</span>
       </a>
       <nav>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="buy.html">Chart &amp; Buy</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#philosophy">Philosophy</a>
+        <a href="index.html#tokenomics">Tokenomics</a>
+        <a href="index.html#contracts">Contracts</a>
+        <a href="buy.html" class="btn-gold">Buy &amp; Chart</a>
       </nav>
-      <a href="buy.html" class="btn-gold">Launch Terminal</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="pill">The Rich Sleepers Society • BNB Smart Chain</span>
-          <h1>Sit Back, <span>Earn Big</span>.<br />Cosmic Laziness, Refined.</h1>
-          <p class="hero-copy">
-            AIGONG pairs quiet-luxury restraint with cultural momentum—built for holders who value
-            composure, zero-tax clarity, and effortless presence across the 2027 market cycle.
-          </p>
-          <div class="hero-actions">
-            <a href="buy.html" class="btn-gold">Open Chart &amp; Direct Buy</a>
-            <a href="#tokenomics" class="btn-ghost">Explore Tokenomics</a>
-          </div>
+  <main class="container">
+    <div class="top-bar">
+      <div class="pair-title">
+        <h1>AIGONG / USDT</h1>
+        <span class="badge">BSC · Direct USDT Receiving · 0% Tax</span>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="dexLink" href="https://dexscreener.com/bsc/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140" target="_blank" rel="noopener" class="btn-outline">Open DexScreener</a>
+        <a href="index.html#contracts" class="btn-outline">Official Addresses</a>
+      </div>
+    </div>
+
+    <div class="terminal-grid">
+      <!-- Column 1: Live Chart -->
+      <div class="card chart-card">
+        <div class="card-head">
+          <span class="card-title">Live Chart</span>
+          <span id="pairMeta" style="font-size: 0.78rem; color: var(--muted);">BSC · DexScreener</span>
         </div>
-        <div class="emblem-card">
-          <img src="logo.png" alt="AIGONG Gold Sloth Emblem" />
-          <div class="emblem-title">AIGONG SOCIETY</div>
-          <div class="emblem-sub">Sit Back • Earn Big • BEP-20</div>
+        <div class="chart-box">
+          <iframe
+            id="dexIframe"
+            src="https://dexscreener.com/bsc/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140?embed=1&theme=dark"
+            title="AIGONG Live Chart"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
-    </section>
 
-    <section id="philosophy" class="block">
-      <div class="container">
-        <div class="sec-head">
-          <div class="sec-label">Cosmic Laziness Philosophy</div>
-          <h2>Composure Over Chaos</h2>
+      <!-- Column 2: Market Stats -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Market Overview</span>
+          <span id="liveStatus" style="font-size: 0.76rem; color: var(--gold);">Syncing...</span>
         </div>
-        <div class="grid-3">
-          <div class="card">
-            <h3>The Rich Sleepers Mindset</h3>
-            <p>While noise spikes and fades, The Rich Sleepers Society holds with calm conviction and unhurried focus.</p>
-          </div>
-          <div class="card">
-            <h3>Quiet Luxury Craft</h3>
-            <p>Deep obsidian surfaces, champagne gold accents, and editorial typography give AIGONG an unmistakable presence.</p>
-          </div>
-          <div class="card">
-            <h3>Frictionless BEP-20</h3>
-            <p>Zero buy or sell tax paired with a dedicated live chart and direct USDT acquisition terminal on BNB Smart Chain.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="tokenomics" class="block">
-      <div class="container">
-        <div class="sec-head">
-          <div class="sec-label">On-Chain Specification</div>
-          <h2>AIGONG Tokenomics</h2>
-        </div>
-        <div class="metrics">
-          <div class="metric">
-            <div class="k">Total Supply</div>
-            <div class="v">8,888,000,000</div>
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Price USD</div>
+            <div class="stat-val" id="priceUsd">—</div>
           </div>
-          <div class="metric">
-            <div class="k">Buy / Sell Tax</div>
-            <div class="v">0% / 0%</div>
+          <div class="stat-box">
+            <div class="stat-label">Liquidity</div>
+            <div class="stat-val" id="liquidityVal">—</div>
           </div>
-          <div class="metric">
-            <div class="k">Network</div>
-            <div class="v">BNB Smart Chain</div>
+          <div class="stat-box">
+            <div class="stat-label">FDV / MCap</div>
+            <div class="stat-val" id="fdvVal">—</div>
           </div>
-          <div class="metric">
-            <div class="k">Token Standard</div>
-            <div class="v">BEP-20</div>
+          <div class="stat-box">
+            <div class="stat-label">24H Volume</div>
+            <div class="stat-val" id="vol24h">—</div>
           </div>
         </div>
 
-        <div class="contract-box">
-          <div>
-            <div style="font-size: 0.78rem; color: var(--muted); margin-bottom: 4px;">Official $AIGONG Contract Address (BEP-20)</div>
-            <div class="contract-addr" id="contractAddr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
+        <div class="tf-grid">
+          <div class="tf-box">
+            <div class="tf-label">5M</div>
+            <div class="tf-val" id="chg5m">—</div>
           </div>
-          <button type="button" class="copy-btn" onclick="copyContract(this)">Copy Contract</button>
+          <div class="tf-box">
+            <div class="tf-label">1H</div>
+            <div class="tf-val" id="chg1h">—</div>
+          </div>
+          <div class="tf-box">
+            <div class="tf-label">6H</div>
+            <div class="tf-val" id="chg6h">—</div>
+          </div>
+          <div class="tf-box">
+            <div class="tf-label">24H</div>
+            <div class="tf-val" id="chg24h">—</div>
+          </div>
+        </div>
+
+        <div class="kv-list">
+          <div class="kv-row">
+            <span>Network</span>
+            <span>BNB Smart Chain (BEP-20)</span>
+          </div>
+          <div class="kv-row">
+            <span>Total Supply</span>
+            <span>8,888,000,000</span>
+          </div>
+          <div class="kv-row">
+            <span>Token Tax</span>
+            <span>0% Buy / 0% Sell</span>
+          </div>
+          <div class="kv-row">
+            <span>USDT Settlement</span>
+            <span>100% to Receiving Wallet</span>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- Column 3: Direct USDT Buy to Receiving Wallet -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Buy with USDT (BEP-20)</span>
+          <span style="font-size: 0.76rem; color: var(--muted);">BSC Mainnet</span>
+        </div>
+
+        <div class="swap-box">
+          <div class="swap-top">
+            <span>Buyer Pays (USDT BEP-20)</span>
+            <span>Network: BSC</span>
+          </div>
+          <div class="swap-input-row">
+            <input id="usdtPayInput" type="number" min="0.01" step="any" value="100" oninput="recalcBuy()" />
+            <span class="token-pill">USDT</span>
+          </div>
+        </div>
+
+        <div class="preset-row">
+          <button class="preset-btn" type="button" onclick="setAmount(50)">50</button>
+          <button class="preset-btn" type="button" onclick="setAmount(100)">100</button>
+          <button class="preset-btn" type="button" onclick="setAmount(500)">500</button>
+          <button class="preset-btn" type="button" onclick="setAmount(1000)">1,000</button>
+        </div>
+
+        <div class="kv-list" style="margin-bottom: 10px;">
+          <div class="kv-row">
+            <span>USDT Sent to Receiving Wallet</span>
+            <strong id="toTreasuryVal">100 USDT</strong>
+          </div>
+          <div class="kv-row">
+            <span>Estimated $AIGONG Allocation</span>
+            <strong id="estAigongVal">—</strong>
+          </div>
+        </div>
+
+        <div class="action-stack">
+          <button class="btn-outline" type="button" onclick="connectWallet()">Connect Web3 Wallet</button>
+          <button class="btn-gold" type="button" onclick="sendUsdtToTreasury()">Confirm &amp; Send USDT</button>
+        </div>
+
+        <div class="status-line" id="buyStatus"></div>
+
+        <div class="addr-card">
+          <div class="addr-head">
+            <span>USDT Receiving Wallet (BEP-20)</span>
+            <button class="copy-mini" type="button" onclick="copyAddr('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
+          </div>
+          <div class="addr-mini">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
+        </div>
+
+        <div class="addr-card">
+          <div class="addr-head">
+            <span>$AIGONG Contract (BEP-20)</span>
+            <button class="copy-mini" type="button" onclick="copyAddr('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
+          </div>
+          <div class="addr-mini">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
+        </div>
+
+        <div class="addr-card">
+          <div class="addr-head">
+            <span>USDT Contract (BEP-20)</span>
+            <button class="copy-mini" type="button" onclick="copyAddr('0x55d398326f99059fF775485246999027B3197955', this)">Copy</button>
+          </div>
+          <div class="addr-mini">0x55d398326f99059fF775485246999027B3197955</div>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
-      <span>© 2027 AIGONG — The Rich Sleepers Society. Sit Back, Earn Big.</span>
-      <span>Domain: aigong.store</span>
-    </div>
-  </footer>
-
   <script>
-    function copyContract(btn) {
-      const addr = document.getElementById('contractAddr').textContent.trim();
-      navigator.clipboard.writeText(addr).then(() => {
+    const AIGONG_ADDR = "0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140";
+    const USDT_ADDR = "0x55d398326f99059fF775485246999027B3197955";
+    const RECEIVING_WALLET = "0x603406b7128d45A79E91c74b56dB7E2fc8918ad3";
+
+    let priceUsdNum = 0;
+    let connectedAccount = null;
+
+    function fmtUsd(v) {
+      const n = Number(v);
+      if (!n || isNaN(n)) return "—";
+      if (n < 0.01) return "$" + n.toFixed(6);
+      return "$" + n.toLocaleString(undefined, { maximumFractionDigits: 4 });
+    }
+
+    function fmtCompact(v) {
+      const n = Number(v);
+      if (!n || isNaN(n)) return "—";
+      if (n >= 1e9) return "$" + (n / 1e9).toFixed(2) + "B";
+      if (n >= 1e6) return "$" + (n / 1e6).toFixed(2) + "M";
+      if (n >= 1e3) return "$" + (n / 1e3).toFixed(1) + "K";
+      return "$" + n.toFixed(2);
+    }
+
+    function setChg(elId, val) {
+      const el = document.getElementById(elId);
+      const n = Number(val);
+      if (val === undefined || val === null || isNaN(n)) {
+        el.textContent = "—";
+        el.className = "tf-val";
+        return;
+      }
+      el.textContent = (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
+      el.className = "tf-val " + (n >= 0 ? "pos" : "neg");
+    }
+
+    function setAmount(val) {
+      document.getElementById("usdtPayInput").value = val;
+      recalcBuy();
+    }
+
+    function recalcBuy() {
+      const amt = parseFloat(document.getElementById("usdtPayInput").value || "0");
+      document.getElementById("toTreasuryVal").textContent = amt > 0
+        ? `${amt.toLocaleString()} USDT`
+        : "0 USDT";
+
+      const estEl = document.getElementById("estAigongVal");
+      if (amt > 0 && priceUsdNum > 0) {
+        estEl.textContent = (amt / priceUsdNum).toLocaleString(undefined, { maximumFractionDigits: 2 }) + " $AIGONG";
+      } else if (amt > 0) {
+        estEl.textContent = "Calculated on settlement";
+      } else {
+        estEl.textContent = "—";
+      }
+    }
+
+    async function loadMarketData() {
+      const statusEl = document.getElementById("liveStatus");
+      try {
+        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${AIGONG_ADDR}`);
+        const data = await res.json();
+        const pairs = (data.pairs || []).filter(p => p.chainId === "bsc");
+        if (!pairs.length) {
+          statusEl.textContent = "Live";
+          recalcBuy();
+          return;
+        }
+        pairs.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
+        const top = pairs[0];
+        priceUsdNum = parseFloat(top.priceUsd || "0") || 0;
+
+        document.getElementById("priceUsd").textContent = fmtUsd(top.priceUsd);
+        document.getElementById("liquidityVal").textContent = fmtCompact(top.liquidity?.usd);
+        document.getElementById("fdvVal").textContent = fmtCompact(top.fdv || top.marketCap);
+        document.getElementById("vol24h").textContent = fmtCompact(top.volume?.h24);
+
+        setChg("chg5m", top.priceChange?.m5);
+        setChg("chg1h", top.priceChange?.h1);
+        setChg("chg6h", top.priceChange?.h6);
+        setChg("chg24h", top.priceChange?.h24);
+
+        if (top.pairAddress) {
+          document.getElementById("dexIframe").src = `https://dexscreener.com/bsc/${top.pairAddress}?embed=1&theme=dark`;
+          document.getElementById("dexLink").href = `https://dexscreener.com/bsc/${top.pairAddress}`;
+          document.getElementById("pairMeta").textContent = `${top.dexId || "DEX"} · BSC`;
+        }
+        statusEl.textContent = "Live";
+        recalcBuy();
+      } catch (e) {
+        statusEl.textContent = "Live";
+        recalcBuy();
+      }
+    }
+
+    async function connectWallet() {
+      const msg = document.getElementById("buyStatus");
+      if (!window.ethereum) {
+        msg.textContent = "Open inside MetaMask / Trust Wallet browser on BNB Smart Chain, or copy the receiving address below.";
+        return;
+      }
+      try {
+        const accs = await window.ethereum.request({ method: "eth_requestAccounts" });
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x38" }]
+        });
+        connectedAccount = accs[0];
+        msg.textContent = `Connected: ${connectedAccount.slice(0, 6)}...${connectedAccount.slice(-4)} on BSC`;
+      } catch (err) {
+        msg.textContent = err.message || "Connection cancelled.";
+      }
+    }
+
+    async function sendUsdtToTreasury() {
+      const msg = document.getElementById("buyStatus");
+      const amt = parseFloat(document.getElementById("usdtPayInput").value || "0");
+      if (!amt || amt <= 0) {
+        msg.textContent = "Please enter a valid USDT amount.";
+        return;
+      }
+      if (!window.ethereum) {
+        msg.textContent = `No Web3 wallet detected. Send ${amt} USDT (BEP-20) to ${RECEIVING_WALLET}`;
+        return;
+      }
+      try {
+        const accs = connectedAccount ? [connectedAccount] : await window.ethereum.request({ method: "eth_requestAccounts" });
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x38" }]
+        });
+
+        const rawAmount = BigInt(Math.round(amt * 1e18));
+        const paddedTo = RECEIVING_WALLET.toLowerCase().replace(/^0x/, "").padStart(64, "0");
+        const paddedVal = rawAmount.toString(16).padStart(64, "0");
+        const data = "0xa9059cbb" + paddedTo + paddedVal;
+
+        const txHash = await window.ethereum.request({
+          method: "eth_sendTransaction",
+          params: [{
+            from: accs[0],
+            to: USDT_ADDR,
+            data
+          }]
+        });
+        msg.textContent = `Sent ${amt} USDT to receiving wallet. Tx: ${txHash}`;
+      } catch (err) {
+        msg.textContent = err.message || "Transaction cancelled.";
+      }
+    }
+
+    function copyAddr(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
         const prev = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(() => { btn.textContent = prev; }, 1600);
+        btn.textContent = "Copied";
+        setTimeout(() => { btn.textContent = prev; }, 1500);
       });
     }
+
+    loadMarketData();
+    setInterval(loadMarketData, 20000);
   </script>
 </body>
 </html>
