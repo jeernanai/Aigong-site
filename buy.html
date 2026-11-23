@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buy &amp; Live Chart — AIGONG | The Rich Sleepers Society</title>
+  <title>AIGONG — Binance Web3 Board &amp; 5% Allocation ($0.003)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -20,14 +20,10 @@
       --border-gold: rgba(223, 192, 123, 0.28);
       --border-line: rgba(255, 255, 255, 0.08);
       --green: #38d399;
-      --red: #f26d6d;
+      --bnb: #f0b90b;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg);
@@ -37,283 +33,190 @@
       overflow-x: hidden;
       background-image:
         radial-gradient(circle at 50% -10%, rgba(223, 192, 123, 0.15), transparent 55%),
-        radial-gradient(circle at 85% 30%, rgba(223, 192, 123, 0.06), transparent 45%);
+        radial-gradient(circle at 85% 30%, rgba(240, 185, 11, 0.07), transparent 45%);
     }
 
-    .container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(14px);
-      background: rgba(8, 9, 11, 0.86);
+      background: rgba(8, 9, 11, 0.88);
       border-bottom: 1px solid var(--border-line);
     }
 
     .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 74px;
-      gap: 14px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 74px; gap: 14px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text);
-    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+    .brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-gold); }
+    .brand-name { font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; letter-spacing: 0.16em; color: var(--gold-bright); font-weight: 700; }
 
-    .brand img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border-gold);
-    }
-
-    .brand-name {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.16em;
-      color: var(--gold-bright);
-      font-weight: 700;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: var(--gold-bright);
-    }
+    nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    nav a:hover { color: var(--gold-bright); }
 
     .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 20px;
-      border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 20px; border-radius: 999px;
       background: linear-gradient(135deg, #f4dc9e 0%, #cfa756 100%);
-      color: #090a0d;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 22px rgba(223, 192, 123, 0.28);
+      color: #090a0d; font-weight: 700; font-size: 0.9rem;
+      text-decoration: none; border: none; cursor: pointer;
     }
 
     .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--gold-bright);
-      font-weight: 600;
-      font-size: 0.86rem;
-      text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 16px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02); color: var(--gold-bright);
+      font-weight: 600; font-size: 0.86rem; text-decoration: none;
+      border: 1px solid var(--border-gold); cursor: pointer;
+    }
+
+    .quota-banner {
+      margin: 22px 0 18px;
+      background: linear-gradient(135deg, rgba(223, 192, 123, 0.14), rgba(16, 18, 22, 0.95));
       border: 1px solid var(--border-gold);
-      cursor: pointer;
-    }
-
-    .btn-outline:hover {
-      background: var(--gold-glow);
-    }
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 24px 0 18px;
-      flex-wrap: wrap;
-    }
-
-    .pair-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .pair-title h1 {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 700;
-      color: var(--gold-bright);
-    }
-
-    .badge {
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border-gold);
-      background: rgba(223, 192, 123, 0.08);
-      color: var(--gold);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-    }
-
-    .terminal-grid {
+      border-radius: 18px;
+      padding: 22px;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(290px, 0.85fr) minmax(320px, 0.95fr);
-      gap: 16px;
+      grid-template-columns: minmax(0, 1.5fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .quota-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(223, 192, 123, 0.14);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-bright);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .quota-banner h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+
+    .quota-banner p { color: var(--muted); font-size: 0.93rem; }
+
+    .quota-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 14px 18px;
+      text-align: right;
+      min-width: 220px;
+    }
+
+    .quota-box .lbl { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .quota-box .num { font-family: 'Cinzel', Georgia, serif; font-size: 1.55rem; font-weight: 800; color: var(--gold-bright); }
+    .quota-box .sub { font-size: 0.8rem; color: var(--green); font-weight: 600; }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.95fr);
+      gap: 18px;
       align-items: start;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
     }
 
     .card {
       background: var(--surface);
       border: 1px solid var(--border-line);
       border-radius: 18px;
-      padding: 18px;
+      padding: 20px;
     }
 
     .card-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 14px;
-      padding-bottom: 10px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 16px; padding-bottom: 12px;
       border-bottom: 1px solid var(--border-line);
     }
 
     .card-title {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gold-bright);
+      font-size: 1.1rem; font-weight: 700; color: var(--gold-bright);
     }
 
-    .chart-box {
-      width: 100%;
-      height: 540px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border-gold);
-      background: #0b0d11;
+    /* Binance Web3 Board Styling */
+    .bn-board {
+      background:
+        radial-gradient(circle at top right, rgba(240, 185, 11, 0.12), transparent 50%),
+        var(--surface-elevated);
+      border: 1px solid rgba(240, 185, 11, 0.35);
+      border-radius: 16px;
+      padding: 18px;
     }
 
-    .chart-box iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .bn-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-line); margin-bottom: 16px;
     }
 
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 14px;
+    .bn-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; font-size: 1rem; color: var(--bnb);
     }
 
-    .stat-box {
-      background: var(--surface-elevated);
+    .bn-pill {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: rgba(240, 185, 11, 0.16);
+      border: 1px solid rgba(240, 185, 11, 0.45);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.82rem; color: var(--bnb);
+    }
+
+    .price-compare {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;
+    }
+
+    .p-box {
+      background: rgba(8, 9, 11, 0.6);
       border: 1px solid var(--border-line);
       border-radius: 12px;
-      padding: 12px;
-      text-align: center;
+      padding: 14px;
     }
 
-    .stat-label {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
+    .p-box.web-deal {
+      border-color: var(--border-gold);
+      background: rgba(223, 192, 123, 0.08);
     }
 
-    .stat-val {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--text);
+    .p-box .t { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .p-box .v { font-size: 1.2rem; font-weight: 800; margin: 4px 0; }
+    .p-box .d { font-size: 0.78rem; color: var(--gold); }
+
+    .order-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.86rem;
     }
 
-    .tf-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 14px;
+    .order-table th, .order-table td {
+      padding: 9px 10px; border-bottom: 1px solid var(--border-line); text-align: left;
     }
 
-    .tf-box {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-line);
-      border-radius: 10px;
-      padding: 9px 6px;
-      text-align: center;
-    }
+    .order-table th { color: var(--muted); font-size: 0.74rem; text-transform: uppercase; }
 
-    .tf-label {
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .tf-val {
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .pos { color: var(--green); }
-    .neg { color: var(--red); }
-
-    .kv-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .bn-copy-block {
+      background: rgba(8, 9, 11, 0.55);
+      border-left: 3px solid var(--bnb);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 14px;
       font-size: 0.86rem;
-    }
-
-    .kv-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 7px 10px;
-      border-radius: 10px;
-      background: var(--surface-elevated);
-    }
-
-    .kv-row span:first-child {
-      color: var(--muted);
-    }
-
-    .kv-row span:last-child {
-      font-weight: 600;
       color: var(--text);
     }
 
-    .swap-box {
+    /* Buy Box Styling */
+    .input-box {
       background: var(--surface-elevated);
       border: 1px solid var(--border-gold);
       border-radius: 14px;
@@ -321,138 +224,53 @@
       margin-bottom: 12px;
     }
 
-    .swap-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 8px;
+    .input-top { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
+    .input-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .input-row input {
+      width: 100%; background: transparent; border: none; color: var(--text);
+      font-size: 1.3rem; font-weight: 700; outline: none;
     }
 
-    .swap-input-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+    .coin-tag {
+      padding: 6px 12px; border-radius: 999px;
+      background: rgba(223, 192, 123, 0.14); border: 1px solid var(--border-gold);
+      color: var(--gold-bright); font-size: 0.82rem; font-weight: 700;
     }
 
-    .swap-input-row input {
-      width: 100%;
-      background: transparent;
-      border: none;
-      color: var(--text);
-      font-size: 1.25rem;
-      font-weight: 700;
-      outline: none;
+    .presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
+    .presets button {
+      padding: 8px 6px; border-radius: 10px; border: 1px solid var(--border-line);
+      background: var(--surface-elevated); color: var(--gold-bright); font-weight: 600; cursor: pointer;
     }
 
-    .token-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(223, 192, 123, 0.12);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-bright);
-      font-size: 0.82rem;
-      font-weight: 700;
-      white-space: nowrap;
+    .summary { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 0.88rem; }
+    .s-row {
+      display: flex; justify-content: space-between; gap: 10px;
+      padding: 8px 12px; border-radius: 10px; background: var(--surface-elevated);
+    }
+    .s-row span:first-child { color: var(--muted); }
+
+    .stack { display: flex; flex-direction: column; gap: 8px; }
+    .msg { margin-top: 10px; font-size: 0.83rem; color: var(--gold-bright); min-height: 20px; word-break: break-word; }
+
+    .wallet-box {
+      margin-top: 12px; background: var(--surface-elevated);
+      border: 1px solid var(--border-line); border-radius: 12px; padding: 10px 12px;
+    }
+    .wallet-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
+    .wallet-addr { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.76rem; color: var(--text); word-break: break-all; }
+    .copy-btn {
+      padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border-gold);
+      background: rgba(223, 192, 123, 0.12); color: var(--gold-bright); font-size: 0.72rem; cursor: pointer;
     }
 
-    .preset-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
+    @media (max-width: 960px) {
+      .quota-banner, .main-grid { grid-template-columns: 1fr; }
+      .quota-box { text-align: left; }
     }
 
-    .preset-btn {
-      padding: 7px 6px;
-      border-radius: 10px;
-      border: 1px solid var(--border-line);
-      background: var(--surface-elevated);
-      color: var(--gold-bright);
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .preset-btn:hover {
-      border-color: var(--border-gold);
-      background: var(--gold-glow);
-    }
-
-    .action-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .status-line {
-      margin-top: 10px;
-      font-size: 0.82rem;
-      color: var(--gold-bright);
-      min-height: 20px;
-      word-break: break-word;
-    }
-
-    .addr-card {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-gold);
-      border-radius: 12px;
-      padding: 10px 12px;
-      margin-top: 10px;
-    }
-
-    .addr-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .addr-mini {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.76rem;
-      color: var(--text);
-      word-break: break-all;
-    }
-
-    .copy-mini {
-      padding: 4px 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border-gold);
-      background: rgba(223, 192, 123, 0.12);
-      color: var(--gold-bright);
-      font-size: 0.72rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    @media (max-width: 1120px) {
-      .terminal-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .chart-card {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .terminal-grid {
-        grid-template-columns: 1fr;
-      }
-      .chart-box {
-        height: 380px;
-      }
-      nav {
-        gap: 12px;
-      }
+    @media (max-width: 600px) {
+      .price-compare { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -468,336 +286,253 @@
         <a href="index.html#philosophy">Philosophy</a>
         <a href="index.html#tokenomics">Tokenomics</a>
         <a href="index.html#contracts">Contracts</a>
-        <a href="buy.html" class="btn-gold">Buy &amp; Chart</a>
+        <a href="buy.html" class="btn-gold">Buy &amp; Board</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <div class="top-bar">
-      <div class="pair-title">
-        <h1>AIGONG / USDT</h1>
-        <span class="badge">BSC · Direct USDT Receiving · 0% Tax</span>
+    <!-- 5% Allocation & $0.003 Content Section -->
+    <section class="quota-banner">
+      <div>
+        <span class="quota-tag">5% SUPPLY ALLOCATION ONLY · $0.003 PER $AIGONG</span>
+        <h1>Only 5% of Total Supply at $0.003 per $AIGONG</h1>
+        <p>
+          Out of <strong>8,888,000,000 total $AIGONG</strong>, only <strong>5% (444,400,000 $AIGONG)</strong> is offered here at <strong>$0.003 per $AIGONG</strong> — lower than the higher board price shown on Binance Web3. 0% tax on BEP-20, crafted for <em>The Rich Sleepers Society</em>.
+        </p>
       </div>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <a id="dexLink" href="https://dexscreener.com/bsc/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140" target="_blank" rel="noopener" class="btn-outline">Open DexScreener</a>
-        <a href="index.html#contracts" class="btn-outline">Official Addresses</a>
+      <div class="quota-box">
+        <div class="lbl">Web Offer Price</div>
+        <div class="num">$0.003</div>
+        <div class="sub">Cap: 5% Supply (444.40M $AIGONG)</div>
       </div>
-    </div>
+    </section>
 
-    <div class="terminal-grid">
-      <!-- Column 1: Live Chart -->
-      <div class="card chart-card">
-        <div class="card-head">
-          <span class="card-title">Live Chart</span>
-          <span id="pairMeta" style="font-size: 0.78rem; color: var(--muted);">BSC · DexScreener</span>
-        </div>
-        <div class="chart-box">
-          <iframe
-            id="dexIframe"
-            src="https://dexscreener.com/bsc/0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140?embed=1&theme=dark"
-            title="AIGONG Live Chart"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-
-      <!-- Column 2: Market Stats -->
+    <div class="main-grid">
+      <!-- Left: Binance Web3 Board Card -->
       <div class="card">
         <div class="card-head">
-          <span class="card-title">Market Overview</span>
-          <span id="liveStatus" style="font-size: 0.76rem; color: var(--gold);">Syncing...</span>
+          <span class="card-title">Binance Web3 · Market Board</span>
+          <a href="https://web3.binance.com" target="_blank" rel="noopener" class="btn-outline">Open Binance Web3</a>
         </div>
 
-        <div class="stat-grid">
-          <div class="stat-box">
-            <div class="stat-label">Price USD</div>
-            <div class="stat-val" id="priceUsd">—</div>
+        <div class="bn-board">
+          <div class="bn-top">
+            <div class="bn-badge">
+              <span class="bn-pill">BNB</span>
+              <span>AIGONG (BEP-20) · Binance Web3 Board</span>
+            </div>
+            <span style="font-size: 0.78rem; color: var(--muted);">0x8856...2bB140</span>
           </div>
-          <div class="stat-box">
-            <div class="stat-label">Liquidity</div>
-            <div class="stat-val" id="liquidityVal">—</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-label">FDV / MCap</div>
-            <div class="stat-val" id="fdvVal">—</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-label">24H Volume</div>
-            <div class="stat-val" id="vol24h">—</div>
-          </div>
-        </div>
 
-        <div class="tf-grid">
-          <div class="tf-box">
-            <div class="tf-label">5M</div>
-            <div class="tf-val" id="chg5m">—</div>
+          <div class="price-compare">
+            <div class="p-box web-deal">
+              <div class="t">Our Web Sale Price (5% Cap)</div>
+              <div class="v" style="color: var(--gold-bright);">$0.0030 / $AIGONG</div>
+              <div class="d">Limited to 5% of total supply (444,400,000)</div>
+            </div>
+            <div class="p-box">
+              <div class="t">Binance Web3 Board Price</div>
+              <div class="v" id="boardPriceVal" style="color: var(--bnb);">$0.0048+</div>
+              <div class="d" id="boardDiffVal">Higher than $0.003 web price</div>
+            </div>
           </div>
-          <div class="tf-box">
-            <div class="tf-label">1H</div>
-            <div class="tf-val" id="chg1h">—</div>
-          </div>
-          <div class="tf-box">
-            <div class="tf-label">6H</div>
-            <div class="tf-val" id="chg6h">—</div>
-          </div>
-          <div class="tf-box">
-            <div class="tf-label">24H</div>
-            <div class="tf-val" id="chg24h">—</div>
-          </div>
-        </div>
 
-        <div class="kv-list">
-          <div class="kv-row">
-            <span>Network</span>
-            <span>BNB Smart Chain (BEP-20)</span>
-          </div>
-          <div class="kv-row">
-            <span>Total Supply</span>
-            <span>8,888,000,000</span>
-          </div>
-          <div class="kv-row">
-            <span>Token Tax</span>
-            <span>0% Buy / 0% Sell</span>
-          </div>
-          <div class="kv-row">
-            <span>USDT Settlement</span>
-            <span>100% to Receiving Wallet</span>
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Board / Allocation Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total Supply</td>
+                <td><strong>8,888,000,000 $AIGONG</strong></td>
+              </tr>
+              <tr>
+                <td>5% Allocation Quota</td>
+                <td><strong>444,400,000 $AIGONG (Only 5% of supply)</strong></td>
+              </tr>
+              <tr>
+                <td>Web Direct Price</td>
+                <td><strong>$0.003 USDT per 1 $AIGONG</strong></td>
+              </tr>
+              <tr>
+                <td>Board Price Position</td>
+                <td id="boardPosText"><strong>Higher than $0.003 direct web price</strong></td>
+              </tr>
+              <tr>
+                <td>Tax &amp; Chain</td>
+                <td><strong>0% Buy / 0% Sell · BNB Smart Chain (BEP-20)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="bn-copy-block">
+            <strong>5% Supply Story:</strong> Only <strong>5% of all $AIGONG</strong> is allocated for this direct round at <strong>$0.003 per token</strong>, giving early members a lower entry than the higher board price displayed on Binance Web3.
           </div>
         </div>
       </div>
 
-      <!-- Column 3: Direct USDT Buy to Receiving Wallet -->
+      <!-- Right: Direct USDT Buy to Receiving Wallet -->
       <div class="card">
         <div class="card-head">
-          <span class="card-title">Buy with USDT (BEP-20)</span>
-          <span style="font-size: 0.76rem; color: var(--muted);">BSC Mainnet</span>
+          <span class="card-title">Buy $AIGONG @ $0.003</span>
+          <span style="font-size: 0.78rem; color: var(--gold);">5% Quota</span>
         </div>
 
-        <div class="swap-box">
-          <div class="swap-top">
-            <span>Buyer Pays (USDT BEP-20)</span>
-            <span>Network: BSC</span>
+        <div class="input-box">
+          <div class="input-top">
+            <span>You Pay (USDT BEP-20)</span>
+            <span>1 $AIGONG = $0.003</span>
           </div>
-          <div class="swap-input-row">
-            <input id="usdtPayInput" type="number" min="0.01" step="any" value="100" oninput="recalcBuy()" />
-            <span class="token-pill">USDT</span>
-          </div>
-        </div>
-
-        <div class="preset-row">
-          <button class="preset-btn" type="button" onclick="setAmount(50)">50</button>
-          <button class="preset-btn" type="button" onclick="setAmount(100)">100</button>
-          <button class="preset-btn" type="button" onclick="setAmount(500)">500</button>
-          <button class="preset-btn" type="button" onclick="setAmount(1000)">1,000</button>
-        </div>
-
-        <div class="kv-list" style="margin-bottom: 10px;">
-          <div class="kv-row">
-            <span>USDT Sent to Receiving Wallet</span>
-            <strong id="toTreasuryVal">100 USDT</strong>
-          </div>
-          <div class="kv-row">
-            <span>Estimated $AIGONG Allocation</span>
-            <strong id="estAigongVal">—</strong>
+          <div class="input-row">
+            <input id="usdtAmt" type="number" min="0.01" step="any" value="100" oninput="calcTokens()" />
+            <span class="coin-tag">USDT</span>
           </div>
         </div>
 
-        <div class="action-stack">
-          <button class="btn-outline" type="button" onclick="connectWallet()">Connect Web3 Wallet</button>
-          <button class="btn-gold" type="button" onclick="sendUsdtToTreasury()">Confirm &amp; Send USDT</button>
+        <div class="presets">
+          <button type="button" onclick="setUsdt(30)">30</button>
+          <button type="button" onclick="setUsdt(100)">100</button>
+          <button type="button" onclick="setUsdt(300)">300</button>
+          <button type="button" onclick="setUsdt(1000)">1,000</button>
         </div>
 
-        <div class="status-line" id="buyStatus"></div>
-
-        <div class="addr-card">
-          <div class="addr-head">
-            <span>USDT Receiving Wallet (BEP-20)</span>
-            <button class="copy-mini" type="button" onclick="copyAddr('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
+        <div class="summary">
+          <div class="s-row">
+            <span>USDT to Receiving Wallet</span>
+            <strong id="sendSummary">100 USDT</strong>
           </div>
-          <div class="addr-mini">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
+          <div class="s-row">
+            <span>$AIGONG @ $0.003</span>
+            <strong id="tokenSummary" style="color: var(--gold-bright);">33,333.33 $AIGONG</strong>
+          </div>
+          <div class="s-row">
+            <span>Allocation Cap</span>
+            <strong>5% of Total Supply</strong>
+          </div>
         </div>
 
-        <div class="addr-card">
-          <div class="addr-head">
+        <div class="stack">
+          <button type="button" class="btn-outline" onclick="connectWallet()">Connect Wallet</button>
+          <button type="button" class="btn-gold" onclick="sendUsdt()">Confirm &amp; Send USDT</button>
+        </div>
+
+        <div class="msg" id="statusText"></div>
+
+        <div class="wallet-box">
+          <div class="wallet-head">
+            <span>Receiving Wallet (USDT BEP-20)</span>
+            <button type="button" class="copy-btn" onclick="copyText('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
+          </div>
+          <div class="wallet-addr">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
+        </div>
+
+        <div class="wallet-box">
+          <div class="wallet-head">
             <span>$AIGONG Contract (BEP-20)</span>
-            <button class="copy-mini" type="button" onclick="copyAddr('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
+            <button type="button" class="copy-btn" onclick="copyText('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
           </div>
-          <div class="addr-mini">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
-        </div>
-
-        <div class="addr-card">
-          <div class="addr-head">
-            <span>USDT Contract (BEP-20)</span>
-            <button class="copy-mini" type="button" onclick="copyAddr('0x55d398326f99059fF775485246999027B3197955', this)">Copy</button>
-          </div>
-          <div class="addr-mini">0x55d398326f99059fF775485246999027B3197955</div>
+          <div class="wallet-addr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
         </div>
       </div>
     </div>
   </main>
 
   <script>
-    const AIGONG_ADDR = "0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140";
-    const USDT_ADDR = "0x55d398326f99059fF775485246999027B3197955";
+    const USDT_CONTRACT = "0x55d398326f99059fF775485246999027B3197955";
     const RECEIVING_WALLET = "0x603406b7128d45A79E91c74b56dB7E2fc8918ad3";
+    const AIGONG_CONTRACT = "0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140";
+    const PRICE_PER_TOKEN = 0.003;
 
-    let priceUsdNum = 0;
-    let connectedAccount = null;
+    let account = null;
 
-    function fmtUsd(v) {
-      const n = Number(v);
-      if (!n || isNaN(n)) return "—";
-      if (n < 0.01) return "$" + n.toFixed(6);
-      return "$" + n.toLocaleString(undefined, { maximumFractionDigits: 4 });
+    function setUsdt(v) {
+      document.getElementById("usdtAmt").value = v;
+      calcTokens();
     }
 
-    function fmtCompact(v) {
-      const n = Number(v);
-      if (!n || isNaN(n)) return "—";
-      if (n >= 1e9) return "$" + (n / 1e9).toFixed(2) + "B";
-      if (n >= 1e6) return "$" + (n / 1e6).toFixed(2) + "M";
-      if (n >= 1e3) return "$" + (n / 1e3).toFixed(1) + "K";
-      return "$" + n.toFixed(2);
+    function calcTokens() {
+      const amt = parseFloat(document.getElementById("usdtAmt").value || "0");
+      document.getElementById("sendSummary").textContent = amt > 0 ? `${amt.toLocaleString()} USDT` : "0 USDT";
+      document.getElementById("tokenSummary").textContent = amt > 0
+        ? `${(amt / PRICE_PER_TOKEN).toLocaleString(undefined, { maximumFractionDigits: 2 })} $AIGONG`
+        : "0 $AIGONG";
     }
 
-    function setChg(elId, val) {
-      const el = document.getElementById(elId);
-      const n = Number(val);
-      if (val === undefined || val === null || isNaN(n)) {
-        el.textContent = "—";
-        el.className = "tf-val";
-        return;
-      }
-      el.textContent = (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
-      el.className = "tf-val " + (n >= 0 ? "pos" : "neg");
-    }
-
-    function setAmount(val) {
-      document.getElementById("usdtPayInput").value = val;
-      recalcBuy();
-    }
-
-    function recalcBuy() {
-      const amt = parseFloat(document.getElementById("usdtPayInput").value || "0");
-      document.getElementById("toTreasuryVal").textContent = amt > 0
-        ? `${amt.toLocaleString()} USDT`
-        : "0 USDT";
-
-      const estEl = document.getElementById("estAigongVal");
-      if (amt > 0 && priceUsdNum > 0) {
-        estEl.textContent = (amt / priceUsdNum).toLocaleString(undefined, { maximumFractionDigits: 2 }) + " $AIGONG";
-      } else if (amt > 0) {
-        estEl.textContent = "Calculated on settlement";
-      } else {
-        estEl.textContent = "—";
-      }
-    }
-
-    async function loadMarketData() {
-      const statusEl = document.getElementById("liveStatus");
+    async function syncBoardPrice() {
       try {
-        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${AIGONG_ADDR}`);
+        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${AIGONG_CONTRACT}`);
         const data = await res.json();
         const pairs = (data.pairs || []).filter(p => p.chainId === "bsc");
-        if (!pairs.length) {
-          statusEl.textContent = "Live";
-          recalcBuy();
-          return;
-        }
+        if (!pairs.length) return;
         pairs.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
-        const top = pairs[0];
-        priceUsdNum = parseFloat(top.priceUsd || "0") || 0;
-
-        document.getElementById("priceUsd").textContent = fmtUsd(top.priceUsd);
-        document.getElementById("liquidityVal").textContent = fmtCompact(top.liquidity?.usd);
-        document.getElementById("fdvVal").textContent = fmtCompact(top.fdv || top.marketCap);
-        document.getElementById("vol24h").textContent = fmtCompact(top.volume?.h24);
-
-        setChg("chg5m", top.priceChange?.m5);
-        setChg("chg1h", top.priceChange?.h1);
-        setChg("chg6h", top.priceChange?.h6);
-        setChg("chg24h", top.priceChange?.h24);
-
-        if (top.pairAddress) {
-          document.getElementById("dexIframe").src = `https://dexscreener.com/bsc/${top.pairAddress}?embed=1&theme=dark`;
-          document.getElementById("dexLink").href = `https://dexscreener.com/bsc/${top.pairAddress}`;
-          document.getElementById("pairMeta").textContent = `${top.dexId || "DEX"} · BSC`;
+        const livePrice = parseFloat(pairs[0].priceUsd || "0") || 0;
+        if (livePrice > PRICE_PER_TOKEN) {
+          const pct = (((livePrice - PRICE_PER_TOKEN) / PRICE_PER_TOKEN) * 100).toFixed(1);
+          document.getElementById("boardPriceVal").textContent = "$" + livePrice.toFixed(6);
+          document.getElementById("boardDiffVal").textContent = `+${pct}% higher than $0.003 web price`;
+          document.getElementById("boardPosText").innerHTML = `<strong>$${livePrice.toFixed(6)} on board (higher than $0.003)</strong>`;
         }
-        statusEl.textContent = "Live";
-        recalcBuy();
-      } catch (e) {
-        statusEl.textContent = "Live";
-        recalcBuy();
-      }
+      } catch (_) {}
     }
 
     async function connectWallet() {
-      const msg = document.getElementById("buyStatus");
+      const el = document.getElementById("statusText");
       if (!window.ethereum) {
-        msg.textContent = "Open inside MetaMask / Trust Wallet browser on BNB Smart Chain, or copy the receiving address below.";
+        el.textContent = "Open in MetaMask / Trust Wallet / Binance Web3 browser on BSC, or copy the receiving address.";
         return;
       }
       try {
         const accs = await window.ethereum.request({ method: "eth_requestAccounts" });
-        await window.ethereum.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x38" }]
-        });
-        connectedAccount = accs[0];
-        msg.textContent = `Connected: ${connectedAccount.slice(0, 6)}...${connectedAccount.slice(-4)} on BSC`;
-      } catch (err) {
-        msg.textContent = err.message || "Connection cancelled.";
+        await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: "0x38" }] });
+        account = accs[0];
+        el.textContent = `Connected: ${account.slice(0, 6)}...${account.slice(-4)} (BSC)`;
+      } catch (e) {
+        el.textContent = e.message || "Cancelled.";
       }
     }
 
-    async function sendUsdtToTreasury() {
-      const msg = document.getElementById("buyStatus");
-      const amt = parseFloat(document.getElementById("usdtPayInput").value || "0");
+    async function sendUsdt() {
+      const el = document.getElementById("statusText");
+      const amt = parseFloat(document.getElementById("usdtAmt").value || "0");
       if (!amt || amt <= 0) {
-        msg.textContent = "Please enter a valid USDT amount.";
+        el.textContent = "Enter a valid USDT amount.";
         return;
       }
       if (!window.ethereum) {
-        msg.textContent = `No Web3 wallet detected. Send ${amt} USDT (BEP-20) to ${RECEIVING_WALLET}`;
+        el.textContent = `Send ${amt} USDT (BEP-20) to ${RECEIVING_WALLET}`;
         return;
       }
       try {
-        const accs = connectedAccount ? [connectedAccount] : await window.ethereum.request({ method: "eth_requestAccounts" });
-        await window.ethereum.request({
-          method: "wallet_switchEthereumChain",
-          params: [{ chainId: "0x38" }]
-        });
-
-        const rawAmount = BigInt(Math.round(amt * 1e18));
-        const paddedTo = RECEIVING_WALLET.toLowerCase().replace(/^0x/, "").padStart(64, "0");
-        const paddedVal = rawAmount.toString(16).padStart(64, "0");
-        const data = "0xa9059cbb" + paddedTo + paddedVal;
-
-        const txHash = await window.ethereum.request({
+        const accs = account ? [account] : await window.ethereum.request({ method: "eth_requestAccounts" });
+        await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: "0x38" }] });
+        const raw = BigInt(Math.round(amt * 1e18));
+        const data = "0xa9059cbb"
+          + RECEIVING_WALLET.toLowerCase().replace(/^0x/, "").padStart(64, "0")
+          + raw.toString(16).padStart(64, "0");
+        const tx = await window.ethereum.request({
           method: "eth_sendTransaction",
-          params: [{
-            from: accs[0],
-            to: USDT_ADDR,
-            data
-          }]
+          params: [{ from: accs[0], to: USDT_CONTRACT, data }]
         });
-        msg.textContent = `Sent ${amt} USDT to receiving wallet. Tx: ${txHash}`;
-      } catch (err) {
-        msg.textContent = err.message || "Transaction cancelled.";
+        el.textContent = `Sent ${amt} USDT to receiving wallet. Tx: ${tx}`;
+      } catch (e) {
+        el.textContent = e.message || "Transaction cancelled.";
       }
     }
 
-    function copyAddr(text, btn) {
-      navigator.clipboard.writeText(text).then(() => {
-        const prev = btn.textContent;
+    function copyText(txt, btn) {
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
         btn.textContent = "Copied";
-        setTimeout(() => { btn.textContent = prev; }, 1500);
+        setTimeout(() => { btn.textContent = old; }, 1500);
       });
     }
 
-    loadMarketData();
-    setInterval(loadMarketData, 20000);
+    calcTokens();
+    syncBoardPrice();
   </script>
 </body>
 </html>
