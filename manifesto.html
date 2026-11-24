@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIGONG — Manifesto | The Rich Sleepers Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07080a;
+      --surface: rgba(17, 20, 26, 0.84);
+      --surface-solid: #11141a;
+      --text: #f6f3ec;
+      --muted: #a4aab6;
+      --gold: #e2c27a;
+      --gold-bright: #f8e3ab;
+      --gold-dim: rgba(226, 194, 122, 0.14);
+      --border: rgba(226, 194, 122, 0.28);
+      --line: rgba(255, 255, 255, 0.07);
+      --green: #38d399;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse 80% 45% at 50% -5%, rgba(226, 194, 122, 0.16), transparent 70%),
+        radial-gradient(circle at 15% 55%, rgba(226, 194, 122, 0.07), transparent 45%);
+    }
+
+    .container { width: 100%; max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+
+    header {
+      position: sticky; top: 0; z-index: 60;
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 8, 10, 0.82);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 12px;
+    }
+
+    .left-group { display: flex; align-items: center; gap: 12px; }
+
+    .menu-btn {
+      width: 40px; height: 40px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--gold-dim);
+      color: var(--gold-bright); font-size: 1.25rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      cursor: pointer; flex-shrink: 0;
+    }
+
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+
+    .nav-logo {
+      width: 36px; height: 36px; border-radius: 50%;
+      overflow: hidden; border: 1px solid var(--border);
+      background: var(--surface-solid); flex-shrink: 0;
+    }
+
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block; }
+
+    .brand-name {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.06rem; letter-spacing: 0.18em;
+      color: var(--gold-bright); font-weight: 700;
+    }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 18px; border-radius: 999px;
+      background: linear-gradient(135deg, #faeaBE 0%, #d4af5a 100%);
+      color: #090a0d; font-weight: 700; font-size: 0.86rem;
+      text-decoration: none; border: none; cursor: pointer; white-space: nowrap;
+      box-shadow: 0 6px 24px rgba(226, 194, 122, 0.24);
+    }
+
+    /* Left Side Drawer */
+    .drawer-backdrop {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px); z-index: 80; display: none;
+    }
+    .drawer-backdrop.open { display: block; }
+
+    .side-drawer {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 270px;
+      background: #0d1016; border-right: 1px solid var(--border);
+      z-index: 90; padding: 22px 18px;
+      transform: translateX(-100%); transition: transform 0.25s ease;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .side-drawer.open { transform: translateX(0); }
+
+    .drawer-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .close-btn {
+      width: 34px; height: 34px; border-radius: 10px;
+      border: 1px solid var(--line); background: transparent;
+      color: var(--muted); font-size: 1.1rem; cursor: pointer;
+    }
+
+    .drawer-links { display: flex; flex-direction: column; gap: 8px; }
+    .drawer-links a {
+      padding: 12px 14px; border-radius: 14px; text-decoration: none;
+      color: var(--text); font-weight: 600; font-size: 0.94rem;
+      border: 1px solid transparent; transition: all 0.2s ease;
+    }
+    .drawer-links a:hover, .drawer-links a.active {
+      background: var(--gold-dim); border-color: var(--border); color: var(--gold-bright);
+    }
+
+    .page-head { padding: 36px 0 24px; }
+    .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 6px;
+    }
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.65rem, 4vw, 2.6rem);
+      color: var(--gold-bright); margin-bottom: 10px;
+    }
+    .sub { color: var(--muted); font-size: 0.96rem; max-width: 700px; }
+
+    .chapters { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+
+    .chapter-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 22px; padding: 22px 24px;
+    }
+    .chapter-card.highlight { border-color: var(--border); background: linear-gradient(135deg, rgba(226, 194, 122, 0.1), rgba(17, 20, 26, 0.88)); }
+
+    .chap-num {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.78rem; letter-spacing: 0.14em;
+      color: var(--gold); font-weight: 700; margin-bottom: 6px;
+    }
+    .chapter-card h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.22rem; color: var(--gold-bright); margin-bottom: 8px;
+    }
+    .chapter-card p { color: var(--muted); font-size: 0.93rem; }
+
+    .cta-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 22px; padding: 22px 24px; margin-bottom: 44px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .cta-box h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; color: var(--gold-bright); }
+    .cta-box p { color: var(--muted); font-size: 0.88rem; }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 24px 0 34px;
+      color: var(--muted); font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Navigation Drawer -->
+  <div class="drawer-backdrop" id="backdrop" onclick="toggleMenu(false)"></div>
+  <aside class="side-drawer" id="drawer">
+    <div>
+      <div class="drawer-top">
+        <span class="brand-name">AIGONG</span>
+        <button class="close-btn" type="button" onclick="toggleMenu(false)">✕</button>
+      </div>
+      <nav class="drawer-links">
+        <a href="index.html">01 · Home</a>
+        <a href="token.html">02 · Token Details</a>
+        <a href="manifesto.html" class="active">03 · Manifesto</a>
+        <a href="buy.html">04 · AIGONG Swap</a>
+      </nav>
+    </div>
+    <a href="buy.html" class="btn-primary" style="width:100%;">Open AIGONG Swap</a>
+  </aside>
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="left-group">
+        <button class="menu-btn" type="button" aria-label="Menu" onclick="toggleMenu(true)">☰</button>
+        <a href="index.html" class="brand">
+          <span class="nav-logo"><img src="logo.png.jpeg" alt="AIGONG" /></span>
+          <span class="brand-name">AIGONG</span>
+        </a>
+      </div>
+      <a href="buy.html" class="btn-primary">AIGONG Swap</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <div class="eyebrow">03 · The AIGONG Manifesto</div>
+      <h1>Wealth Knocks Again. Sleep Through the Noise.</h1>
+      <p class="sub">
+        A modern manifesto for The Rich Sleepers Society — calm conviction, AI momentum, and an unhurried path toward big dreams.
+      </p>
+    </section>
+
+    <div class="chapters">
+      <article class="chapter-card highlight">
+        <div class="chap-num">CHAPTER I · THE SECOND KNOCK</div>
+        <h2>Wealth Opportunity Returns</h2>
+        <p>
+          Markets move in cycles, and big wealth windows tend to reward those who recognize momentum early. $AIGONG is crafted around the feeling that a fresh wealth opportunity is knocking again — without requiring you to live glued to red and green candles.
+        </p>
+      </article>
+
+      <article class="chapter-card">
+        <div class="chap-num">CHAPTER II · AI x LUXURY CALM</div>
+        <h2>Let AI Handle the Grind</h2>
+        <p>
+          Modern wealth doesn't have to look frantic. By pairing gold-toned quiet luxury with AI-assisted tools and always-on digital presence, $AIGONG celebrates smart positioning while you rest.
+        </p>
+      </article>
+
+      <article class="chapter-card">
+        <div class="chap-num">CHAPTER III · THE 5% QUOTA &amp; FLEXIBLE SUPPORT</div>
+        <h2>Capped 5% Allocation, Zero Rigid Promises</h2>
+        <p>
+          AIGONG Swap offers a capped 5% allocation (444,400,000 $AIGONG) at $0.003 alongside a 0% tax structure. Proceeds from this 5% pool flexibly support liquidity, brand visibility, and ecosystem operations as momentum builds — staying adaptable rather than locked into rigid contractual promises.
+        </p>
+      </article>
+
+      <article class="chapter-card">
+        <div class="chap-num">CHAPTER IV · THE $0.30 (100X) DREAM HORIZON</div>
+        <h2>From $0.003 Entry to $0.30 Ambition</h2>
+        <p>
+          Every memecoin culture thrives on bold ambition. Starting from the $0.003 AIGONG Swap tier, $0.30 represents a 100x dream horizon — a bold target to dream toward while keeping expectations grounded in market reality.
+        </p>
+      </article>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <h3>Ready to Enter via AIGONG Swap?</h3>
+        <p>Check live market reference and swap USDT (BEP-20) at $0.003 inside the 5% quota.</p>
+      </div>
+      <a href="buy.html" class="btn-primary">Go to AIGONG Swap</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <span>AIGONG · Manifesto</span>
+      <a href="buy.html" style="color:var(--gold-bright); text-decoration:none; font-weight:600;">Next: AIGONG Swap →</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(open) {
+      document.getElementById("drawer").classList.toggle("open", open);
+      document.getElementById("backdrop").classList.toggle("open", open);
+    }
+  </script>
+</body>
+</html>
