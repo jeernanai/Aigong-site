@@ -3,274 +3,363 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIGONG — Binance Web3 Board &amp; 5% Allocation ($0.003)</title>
+  <title>AIGONG — The Rich Sleepers Society | Sit Back, Earn Big</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #08090b;
-      --surface: #101216;
-      --surface-elevated: #161920;
-      --text: #f5f2eb;
-      --muted: #9ea4b0;
-      --gold: #dfc07b;
-      --gold-bright: #f4dc9e;
-      --gold-glow: rgba(223, 192, 123, 0.16);
-      --border-gold: rgba(223, 192, 123, 0.28);
-      --border-line: rgba(255, 255, 255, 0.08);
-      --green: #38d399;
-      --bnb: #f0b90b;
+      --bg: #07080a;
+      --surface: rgba(17, 20, 26, 0.8);
+      --surface-solid: #11141a;
+      --text: #f6f3ec;
+      --muted: #a4aab6;
+      --gold: #e2c27a;
+      --gold-bright: #f8e3ab;
+      --gold-dim: rgba(226, 194, 122, 0.14);
+      --border: rgba(226, 194, 122, 0.28);
+      --line: rgba(255, 255, 255, 0.07);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
       overflow-x: hidden;
       background-image:
-        radial-gradient(circle at 50% -10%, rgba(223, 192, 123, 0.15), transparent 55%),
-        radial-gradient(circle at 85% 30%, rgba(240, 185, 11, 0.07), transparent 45%);
+        radial-gradient(ellipse 80% 45% at 50% -5%, rgba(226, 194, 122, 0.18), transparent 70%),
+        radial-gradient(circle at 12% 38%, rgba(226, 194, 122, 0.07), transparent 45%),
+        radial-gradient(circle at 88% 72%, rgba(226, 194, 122, 0.06), transparent 45%);
     }
 
-    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
     header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(8, 9, 11, 0.88);
-      border-bottom: 1px solid var(--border-line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 8, 10, 0.78);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-wrap {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 74px; gap: 14px;
-    }
-
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
-    .brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-gold); }
-    .brand-name { font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; letter-spacing: 0.16em; color: var(--gold-bright); font-weight: 700; }
-
-    nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-    nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
-    nav a:hover { color: var(--gold-bright); }
-
-    .btn-gold {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 11px 20px; border-radius: 999px;
-      background: linear-gradient(135deg, #f4dc9e 0%, #cfa756 100%);
-      color: #090a0d; font-weight: 700; font-size: 0.9rem;
-      text-decoration: none; border: none; cursor: pointer;
-    }
-
-    .btn-outline {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 10px 16px; border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02); color: var(--gold-bright);
-      font-weight: 600; font-size: 0.86rem; text-decoration: none;
-      border: 1px solid var(--border-gold); cursor: pointer;
-    }
-
-    .quota-banner {
-      margin: 22px 0 18px;
-      background: linear-gradient(135deg, rgba(223, 192, 123, 0.14), rgba(16, 18, 22, 0.95));
-      border: 1px solid var(--border-gold);
-      border-radius: 18px;
-      padding: 22px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) auto;
-      gap: 18px;
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 12px;
     }
 
-    .quota-tag {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: rgba(223, 192, 123, 0.14);
-      border: 1px solid var(--border-gold);
-      color: var(--gold-bright);
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      flex-shrink: 0;
     }
 
-    .quota-banner h1 {
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface-solid);
+      flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.15);
+      display: block;
+    }
+
+    .brand-name {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      font-size: 1.06rem;
+      letter-spacing: 0.18em;
       color: var(--gold-bright);
-      margin-bottom: 8px;
+      font-weight: 700;
     }
 
-    .quota-banner p { color: var(--muted); font-size: 0.93rem; }
-
-    .quota-box {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-gold);
-      border-radius: 14px;
-      padding: 14px 18px;
-      text-align: right;
-      min-width: 220px;
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
-    .quota-box .lbl { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
-    .quota-box .num { font-family: 'Cinzel', Georgia, serif; font-size: 1.55rem; font-weight: 800; color: var(--gold-bright); }
-    .quota-box .sub { font-size: 0.8rem; color: var(--green); font-weight: 600; }
+    .desktop-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
-    .main-grid {
+    .desktop-nav a:hover { color: var(--gold-bright); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #faeaBE 0%, #d4af5a 100%);
+      color: #090a0d;
+      font-weight: 700;
+      font-size: 0.86rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 6px 24px rgba(226, 194, 122, 0.22);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--gold-bright);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      padding: 48px 0 42px;
+      text-align: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(226, 194, 122, 0.09);
+      border: 1px solid var(--border);
+      color: var(--gold-bright);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* Single clean circular emblem with outer white edge cropped smoothly */
+    .emblem-circle {
+      width: 144px;
+      height: 144px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1.5px solid var(--gold);
+      box-shadow:
+        0 0 0 5px rgba(226, 194, 122, 0.08),
+        0 16px 40px rgba(0, 0, 0, 0.65);
+      background: var(--surface-solid);
+    }
+
+    .emblem-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.15);
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.65rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0.06em;
+      color: var(--gold-bright);
+      max-width: 780px;
+      margin: 0 auto 12px;
+    }
+
+    .tagline {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .lead {
+      max-width: 580px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .metrics-strip {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.95fr);
-      gap: 18px;
-      align-items: start;
-      margin-bottom: 48px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 12px 0 52px;
     }
 
-    .card {
+    .metric-card {
       background: var(--surface);
-      border: 1px solid var(--border-line);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
       border-radius: 18px;
+      padding: 18px 16px;
+    }
+
+    .metric-card .k {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .metric-card .v {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+    }
+
+    .metric-card .s {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    section.block { padding: 24px 0 40px; }
+
+    .sec-head { margin-bottom: 18px; }
+
+    .sec-head .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .sec-head h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .glass-card {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
       padding: 20px;
     }
 
-    .card-head {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 10px; margin-bottom: 16px; padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-line);
-    }
-
-    .card-title {
+    .glass-card h3 {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.1rem; font-weight: 700; color: var(--gold-bright);
+      font-size: 1.02rem;
+      color: var(--gold-bright);
+      margin-bottom: 8px;
     }
 
-    /* Binance Web3 Board Styling */
-    .bn-board {
-      background:
-        radial-gradient(circle at top right, rgba(240, 185, 11, 0.12), transparent 50%),
-        var(--surface-elevated);
-      border: 1px solid rgba(240, 185, 11, 0.35);
-      border-radius: 16px;
+    .glass-card p { color: var(--muted); font-size: 0.88rem; }
+
+    .addr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .addr-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
       padding: 18px;
     }
 
-    .bn-top {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 12px; flex-wrap: wrap; padding-bottom: 14px;
-      border-bottom: 1px solid var(--border-line); margin-bottom: 16px;
+    .addr-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
     }
 
-    .bn-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-weight: 700; font-size: 1rem; color: var(--bnb);
+    .addr-top span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold-bright);
     }
 
-    .bn-pill {
-      width: 34px; height: 34px; border-radius: 10px;
-      background: rgba(240, 185, 11, 0.16);
-      border: 1px solid rgba(240, 185, 11, 0.45);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 0.82rem; color: var(--bnb);
+    .copy-pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(226, 194, 122, 0.1);
+      color: var(--gold-bright);
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .price-compare {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;
+    .code-addr {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.76rem;
+      color: var(--muted);
+      word-break: break-all;
     }
 
-    .p-box {
-      background: rgba(8, 9, 11, 0.6);
-      border: 1px solid var(--border-line);
-      border-radius: 12px;
-      padding: 14px;
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 36px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
-    .p-box.web-deal {
-      border-color: var(--border-gold);
-      background: rgba(223, 192, 123, 0.08);
-    }
-
-    .p-box .t { font-size: 0.74rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    .p-box .v { font-size: 1.2rem; font-weight: 800; margin: 4px 0; }
-    .p-box .d { font-size: 0.78rem; color: var(--gold); }
-
-    .order-table {
-      width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 0.86rem;
-    }
-
-    .order-table th, .order-table td {
-      padding: 9px 10px; border-bottom: 1px solid var(--border-line); text-align: left;
-    }
-
-    .order-table th { color: var(--muted); font-size: 0.74rem; text-transform: uppercase; }
-
-    .bn-copy-block {
-      background: rgba(8, 9, 11, 0.55);
-      border-left: 3px solid var(--bnb);
-      border-radius: 0 10px 10px 0;
-      padding: 12px 14px;
-      font-size: 0.86rem;
-      color: var(--text);
-    }
-
-    /* Buy Box Styling */
-    .input-box {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-gold);
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .input-top { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--muted); margin-bottom: 8px; }
-    .input-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .input-row input {
-      width: 100%; background: transparent; border: none; color: var(--text);
-      font-size: 1.3rem; font-weight: 700; outline: none;
-    }
-
-    .coin-tag {
-      padding: 6px 12px; border-radius: 999px;
-      background: rgba(223, 192, 123, 0.14); border: 1px solid var(--border-gold);
-      color: var(--gold-bright); font-size: 0.82rem; font-weight: 700;
-    }
-
-    .presets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
-    .presets button {
-      padding: 8px 6px; border-radius: 10px; border: 1px solid var(--border-line);
-      background: var(--surface-elevated); color: var(--gold-bright); font-weight: 600; cursor: pointer;
-    }
-
-    .summary { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 0.88rem; }
-    .s-row {
-      display: flex; justify-content: space-between; gap: 10px;
-      padding: 8px 12px; border-radius: 10px; background: var(--surface-elevated);
-    }
-    .s-row span:first-child { color: var(--muted); }
-
-    .stack { display: flex; flex-direction: column; gap: 8px; }
-    .msg { margin-top: 10px; font-size: 0.83rem; color: var(--gold-bright); min-height: 20px; word-break: break-word; }
-
-    .wallet-box {
-      margin-top: 12px; background: var(--surface-elevated);
-      border: 1px solid var(--border-line); border-radius: 12px; padding: 10px 12px;
-    }
-    .wallet-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); margin-bottom: 4px; }
-    .wallet-addr { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.76rem; color: var(--text); word-break: break-all; }
-    .copy-btn {
-      padding: 3px 9px; border-radius: 7px; border: 1px solid var(--border-gold);
-      background: rgba(223, 192, 123, 0.12); color: var(--gold-bright); font-size: 0.72rem; cursor: pointer;
-    }
-
-    @media (max-width: 960px) {
-      .quota-banner, .main-grid { grid-template-columns: 1fr; }
-      .quota-box { text-align: left; }
-    }
-
-    @media (max-width: 600px) {
-      .price-compare { grid-template-columns: 1fr; }
+    @media (max-width: 860px) {
+      .desktop-nav { display: none; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+      .cards-3, .addr-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -278,261 +367,139 @@
   <header>
     <div class="container nav-wrap">
       <a href="index.html" class="brand">
-        <img src="logo.png.jpeg" alt="AIGONG Logo" />
+        <span class="nav-logo"><img src="logo.png.jpeg" alt="AIGONG" /></span>
         <span class="brand-name">AIGONG</span>
       </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#philosophy">Philosophy</a>
-        <a href="index.html#tokenomics">Tokenomics</a>
-        <a href="index.html#contracts">Contracts</a>
-        <a href="buy.html" class="btn-gold">Buy &amp; Board</a>
+      <nav class="desktop-nav">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#contracts">Contracts</a>
       </nav>
+      <a href="buy.html" class="btn-primary">Buy &amp; Board</a>
     </div>
   </header>
 
   <main class="container">
-    <!-- 5% Allocation & $0.003 Content Section -->
-    <section class="quota-banner">
-      <div>
-        <span class="quota-tag">5% SUPPLY ALLOCATION ONLY · $0.003 PER $AIGONG</span>
-        <h1>Only 5% of Total Supply at $0.003 per $AIGONG</h1>
-        <p>
-          Out of <strong>8,888,000,000 total $AIGONG</strong>, only <strong>5% (444,400,000 $AIGONG)</strong> is offered here at <strong>$0.003 per $AIGONG</strong> — lower than the higher board price shown on Binance Web3. 0% tax on BEP-20, crafted for <em>The Rich Sleepers Society</em>.
-        </p>
+    <section class="hero">
+      <div class="pill">BNB Smart Chain · BEP-20 · 2027 Edition</div>
+      <div class="emblem-circle">
+        <img src="logo.png.jpeg" alt="AIGONG Emblem" />
       </div>
-      <div class="quota-box">
-        <div class="lbl">Web Offer Price</div>
-        <div class="num">$0.003</div>
-        <div class="sub">Cap: 5% Supply (444.40M $AIGONG)</div>
+      <h1>THE RICH SLEEPERS SOCIETY</h1>
+      <div class="tagline">SIT BACK, EARN BIG</div>
+      <p class="lead">
+        Quiet golden luxury on BNB Smart Chain. Zero tax, fixed 8.888B supply, and an exclusive 5% allocation at $0.003 per $AIGONG compared to higher board pricing on Binance Web3.
+      </p>
+      <div class="cta-row">
+        <a href="buy.html" class="btn-primary">Enter 5% Allocation ($0.003)</a>
+        <a href="#contracts" class="btn-ghost">Official Contracts</a>
       </div>
     </section>
 
-    <div class="main-grid">
-      <!-- Left: Binance Web3 Board Card -->
-      <div class="card">
-        <div class="card-head">
-          <span class="card-title">Binance Web3 · Market Board</span>
-          <a href="https://web3.binance.com" target="_blank" rel="noopener" class="btn-outline">Open Binance Web3</a>
-        </div>
-
-        <div class="bn-board">
-          <div class="bn-top">
-            <div class="bn-badge">
-              <span class="bn-pill">BNB</span>
-              <span>AIGONG (BEP-20) · Binance Web3 Board</span>
-            </div>
-            <span style="font-size: 0.78rem; color: var(--muted);">0x8856...2bB140</span>
-          </div>
-
-          <div class="price-compare">
-            <div class="p-box web-deal">
-              <div class="t">Our Web Sale Price (5% Cap)</div>
-              <div class="v" style="color: var(--gold-bright);">$0.0030 / $AIGONG</div>
-              <div class="d">Limited to 5% of total supply (444,400,000)</div>
-            </div>
-            <div class="p-box">
-              <div class="t">Binance Web3 Board Price</div>
-              <div class="v" id="boardPriceVal" style="color: var(--bnb);">$0.0048+</div>
-              <div class="d" id="boardDiffVal">Higher than $0.003 web price</div>
-            </div>
-          </div>
-
-          <table class="order-table">
-            <thead>
-              <tr>
-                <th>Metric</th>
-                <th>Board / Allocation Detail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Total Supply</td>
-                <td><strong>8,888,000,000 $AIGONG</strong></td>
-              </tr>
-              <tr>
-                <td>5% Allocation Quota</td>
-                <td><strong>444,400,000 $AIGONG (Only 5% of supply)</strong></td>
-              </tr>
-              <tr>
-                <td>Web Direct Price</td>
-                <td><strong>$0.003 USDT per 1 $AIGONG</strong></td>
-              </tr>
-              <tr>
-                <td>Board Price Position</td>
-                <td id="boardPosText"><strong>Higher than $0.003 direct web price</strong></td>
-              </tr>
-              <tr>
-                <td>Tax &amp; Chain</td>
-                <td><strong>0% Buy / 0% Sell · BNB Smart Chain (BEP-20)</strong></td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="bn-copy-block">
-            <strong>5% Supply Story:</strong> Only <strong>5% of all $AIGONG</strong> is allocated for this direct round at <strong>$0.003 per token</strong>, giving early members a lower entry than the higher board price displayed on Binance Web3.
-          </div>
-        </div>
+    <div class="metrics-strip">
+      <div class="metric-card">
+        <div class="k">Total Supply</div>
+        <div class="v">8.888B</div>
+        <div class="s">Fixed BEP-20 Supply</div>
       </div>
-
-      <!-- Right: Direct USDT Buy to Receiving Wallet -->
-      <div class="card">
-        <div class="card-head">
-          <span class="card-title">Buy $AIGONG @ $0.003</span>
-          <span style="font-size: 0.78rem; color: var(--gold);">5% Quota</span>
-        </div>
-
-        <div class="input-box">
-          <div class="input-top">
-            <span>You Pay (USDT BEP-20)</span>
-            <span>1 $AIGONG = $0.003</span>
-          </div>
-          <div class="input-row">
-            <input id="usdtAmt" type="number" min="0.01" step="any" value="100" oninput="calcTokens()" />
-            <span class="coin-tag">USDT</span>
-          </div>
-        </div>
-
-        <div class="presets">
-          <button type="button" onclick="setUsdt(30)">30</button>
-          <button type="button" onclick="setUsdt(100)">100</button>
-          <button type="button" onclick="setUsdt(300)">300</button>
-          <button type="button" onclick="setUsdt(1000)">1,000</button>
-        </div>
-
-        <div class="summary">
-          <div class="s-row">
-            <span>USDT to Receiving Wallet</span>
-            <strong id="sendSummary">100 USDT</strong>
-          </div>
-          <div class="s-row">
-            <span>$AIGONG @ $0.003</span>
-            <strong id="tokenSummary" style="color: var(--gold-bright);">33,333.33 $AIGONG</strong>
-          </div>
-          <div class="s-row">
-            <span>Allocation Cap</span>
-            <strong>5% of Total Supply</strong>
-          </div>
-        </div>
-
-        <div class="stack">
-          <button type="button" class="btn-outline" onclick="connectWallet()">Connect Wallet</button>
-          <button type="button" class="btn-gold" onclick="sendUsdt()">Confirm &amp; Send USDT</button>
-        </div>
-
-        <div class="msg" id="statusText"></div>
-
-        <div class="wallet-box">
-          <div class="wallet-head">
-            <span>Receiving Wallet (USDT BEP-20)</span>
-            <button type="button" class="copy-btn" onclick="copyText('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
-          </div>
-          <div class="wallet-addr">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
-        </div>
-
-        <div class="wallet-box">
-          <div class="wallet-head">
-            <span>$AIGONG Contract (BEP-20)</span>
-            <button type="button" class="copy-btn" onclick="copyText('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
-          </div>
-          <div class="wallet-addr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
-        </div>
+      <div class="metric-card">
+        <div class="k">Direct Quota</div>
+        <div class="v">5% Only</div>
+        <div class="s">444.40M $AIGONG Cap</div>
+      </div>
+      <div class="metric-card">
+        <div class="k">Direct Price</div>
+        <div class="v">$0.003</div>
+        <div class="s">Per 1 $AIGONG (USDT)</div>
+      </div>
+      <div class="metric-card">
+        <div class="k">Tax Rate</div>
+        <div class="v">0% / 0%</div>
+        <div class="s">Zero Buy &amp; Sell Tax</div>
       </div>
     </div>
+
+    <section id="philosophy" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">The Philosophy</div>
+        <h2>Cosmic Laziness, Refined</h2>
+      </div>
+      <div class="cards-3">
+        <div class="glass-card">
+          <h3>Sit Back, Earn Big</h3>
+          <p>Designed for calm conviction rather than constant chart chasing — effortless presence backed by transparent on-chain parameters.</p>
+        </div>
+        <div class="glass-card">
+          <h3>5% Exclusive Allocation</h3>
+          <p>Only 5% of total supply (444,400,000 $AIGONG) is offered at $0.003 per token, below higher board valuations on Binance Web3.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Zero Friction</h3>
+          <p>0% buy/sell tax on BNB Smart Chain with clean contract verification and direct USDT settlement to the designated receiving wallet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">Tokenomics</div>
+        <h2>Built on BNB Smart Chain</h2>
+      </div>
+      <div class="cards-3">
+        <div class="glass-card">
+          <h3>8,888,000,000 Supply</h3>
+          <p>Fixed total supply on BNB Smart Chain (BEP-20) with no hidden buy or sell taxes in the token structure.</p>
+        </div>
+        <div class="glass-card">
+          <h3>$0.003 Direct Rate</h3>
+          <p>Capped at 5% of total supply so early members enter at a lower price point than higher Binance Web3 board pricing.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Binance Web3 &amp; Buy</h3>
+          <p>Inspect board pricing and access the direct USDT allocation terminal on the Buy &amp; Board page.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contracts" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">Verified Addresses</div>
+        <h2>Official Contracts &amp; Wallet</h2>
+      </div>
+      <div class="addr-grid">
+        <div class="addr-box">
+          <div class="addr-top">
+            <span>$AIGONG Contract (BEP-20)</span>
+            <button class="copy-pill" type="button" onclick="copyVal('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
+          </div>
+          <div class="code-addr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
+        </div>
+        <div class="addr-box">
+          <div class="addr-top">
+            <span>USDT Receiving Wallet (BEP-20)</span>
+            <button class="copy-pill" type="button" onclick="copyVal('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
+          </div>
+          <div class="code-addr">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <span>AIGONG · The Rich Sleepers Society</span>
+      <span>0% Tax · BNB Smart Chain (BEP-20)</span>
+    </div>
+  </footer>
+
   <script>
-    const USDT_CONTRACT = "0x55d398326f99059fF775485246999027B3197955";
-    const RECEIVING_WALLET = "0x603406b7128d45A79E91c74b56dB7E2fc8918ad3";
-    const AIGONG_CONTRACT = "0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140";
-    const PRICE_PER_TOKEN = 0.003;
-
-    let account = null;
-
-    function setUsdt(v) {
-      document.getElementById("usdtAmt").value = v;
-      calcTokens();
-    }
-
-    function calcTokens() {
-      const amt = parseFloat(document.getElementById("usdtAmt").value || "0");
-      document.getElementById("sendSummary").textContent = amt > 0 ? `${amt.toLocaleString()} USDT` : "0 USDT";
-      document.getElementById("tokenSummary").textContent = amt > 0
-        ? `${(amt / PRICE_PER_TOKEN).toLocaleString(undefined, { maximumFractionDigits: 2 })} $AIGONG`
-        : "0 $AIGONG";
-    }
-
-    async function syncBoardPrice() {
-      try {
-        const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${AIGONG_CONTRACT}`);
-        const data = await res.json();
-        const pairs = (data.pairs || []).filter(p => p.chainId === "bsc");
-        if (!pairs.length) return;
-        pairs.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
-        const livePrice = parseFloat(pairs[0].priceUsd || "0") || 0;
-        if (livePrice > PRICE_PER_TOKEN) {
-          const pct = (((livePrice - PRICE_PER_TOKEN) / PRICE_PER_TOKEN) * 100).toFixed(1);
-          document.getElementById("boardPriceVal").textContent = "$" + livePrice.toFixed(6);
-          document.getElementById("boardDiffVal").textContent = `+${pct}% higher than $0.003 web price`;
-          document.getElementById("boardPosText").innerHTML = `<strong>$${livePrice.toFixed(6)} on board (higher than $0.003)</strong>`;
-        }
-      } catch (_) {}
-    }
-
-    async function connectWallet() {
-      const el = document.getElementById("statusText");
-      if (!window.ethereum) {
-        el.textContent = "Open in MetaMask / Trust Wallet / Binance Web3 browser on BSC, or copy the receiving address.";
-        return;
-      }
-      try {
-        const accs = await window.ethereum.request({ method: "eth_requestAccounts" });
-        await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: "0x38" }] });
-        account = accs[0];
-        el.textContent = `Connected: ${account.slice(0, 6)}...${account.slice(-4)} (BSC)`;
-      } catch (e) {
-        el.textContent = e.message || "Cancelled.";
-      }
-    }
-
-    async function sendUsdt() {
-      const el = document.getElementById("statusText");
-      const amt = parseFloat(document.getElementById("usdtAmt").value || "0");
-      if (!amt || amt <= 0) {
-        el.textContent = "Enter a valid USDT amount.";
-        return;
-      }
-      if (!window.ethereum) {
-        el.textContent = `Send ${amt} USDT (BEP-20) to ${RECEIVING_WALLET}`;
-        return;
-      }
-      try {
-        const accs = account ? [account] : await window.ethereum.request({ method: "eth_requestAccounts" });
-        await window.ethereum.request({ method: "wallet_switchEthereumChain", params: [{ chainId: "0x38" }] });
-        const raw = BigInt(Math.round(amt * 1e18));
-        const data = "0xa9059cbb"
-          + RECEIVING_WALLET.toLowerCase().replace(/^0x/, "").padStart(64, "0")
-          + raw.toString(16).padStart(64, "0");
-        const tx = await window.ethereum.request({
-          method: "eth_sendTransaction",
-          params: [{ from: accs[0], to: USDT_CONTRACT, data }]
-        });
-        el.textContent = `Sent ${amt} USDT to receiving wallet. Tx: ${tx}`;
-      } catch (e) {
-        el.textContent = e.message || "Transaction cancelled.";
-      }
-    }
-
-    function copyText(txt, btn) {
-      navigator.clipboard.writeText(txt).then(() => {
-        const old = btn.textContent;
+    function copyVal(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const prev = btn.textContent;
         btn.textContent = "Copied";
-        setTimeout(() => { btn.textContent = old; }, 1500);
+        setTimeout(() => { btn.textContent = prev; }, 1500);
       });
     }
-
-    calcTokens();
-    syncBoardPrice();
   </script>
 </body>
 </html>
