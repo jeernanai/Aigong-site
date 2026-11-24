@@ -3,33 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIGONG — The Rich Sleepers Society | Sit Back, Earn Big</title>
+  <title>AIGONG — The Rich Sleepers Society | AIGONG Swap</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #08090b;
-      --surface: #101216;
-      --surface-elevated: #161920;
-      --text: #f5f2eb;
-      --muted: #9ea4b0;
-      --gold: #dfc07b;
-      --gold-bright: #f4dc9e;
-      --gold-glow: rgba(223, 192, 123, 0.16);
-      --border-gold: rgba(223, 192, 123, 0.28);
-      --border-line: rgba(255, 255, 255, 0.08);
+      --bg: #07080a;
+      --surface: rgba(17, 20, 26, 0.8);
+      --surface-solid: #11141a;
+      --text: #f6f3ec;
+      --muted: #a4aab6;
+      --gold: #e2c27a;
+      --gold-bright: #f8e3ab;
+      --gold-dim: rgba(226, 194, 122, 0.14);
+      --border: rgba(226, 194, 122, 0.28);
+      --line: rgba(255, 255, 255, 0.07);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       background-color: var(--bg);
@@ -38,419 +31,368 @@
       line-height: 1.65;
       overflow-x: hidden;
       background-image:
-        radial-gradient(circle at 50% -10%, rgba(223, 192, 123, 0.15), transparent 55%),
-        radial-gradient(circle at 85% 30%, rgba(223, 192, 123, 0.06), transparent 45%);
+        radial-gradient(ellipse 80% 45% at 50% -5%, rgba(226, 194, 122, 0.18), transparent 70%),
+        radial-gradient(circle at 12% 38%, rgba(226, 194, 122, 0.07), transparent 45%),
+        radial-gradient(circle at 88% 72%, rgba(226, 194, 122, 0.06), transparent 45%);
     }
 
-    .container {
-      width: 100%;
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(8, 9, 11, 0.84);
-      border-bottom: 1px solid var(--border-line);
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 8, 10, 0.78);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 76px;
-      gap: 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px; gap: 12px;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text);
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: var(--text); flex-shrink: 0;
     }
 
-    .brand img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border-gold);
+    .nav-logo {
+      width: 36px; height: 36px; border-radius: 50%;
+      overflow: hidden; border: 1px solid var(--border);
+      background: var(--surface-solid); flex-shrink: 0;
+    }
+
+    .nav-logo img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.15); display: block;
     }
 
     .brand-name {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.2rem;
-      letter-spacing: 0.16em;
-      color: var(--gold-bright);
-      font-weight: 700;
+      font-size: 1.06rem; letter-spacing: 0.18em;
+      color: var(--gold-bright); font-weight: 700;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      flex-wrap: wrap;
+    .desktop-nav { display: flex; align-items: center; gap: 24px; }
+    .desktop-nav a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: color 0.2s ease;
+    }
+    .desktop-nav a:hover { color: var(--gold-bright); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 18px; border-radius: 999px;
+      background: linear-gradient(135deg, #faeaBE 0%, #d4af5a 100%);
+      color: #090a0d; font-weight: 700; font-size: 0.86rem;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap; flex-shrink: 0;
+      box-shadow: 0 6px 24px rgba(226, 194, 122, 0.22);
     }
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03); color: var(--gold-bright);
+      font-weight: 600; font-size: 0.9rem; text-decoration: none;
+      border: 1px solid var(--border);
     }
 
-    nav a:hover {
-      color: var(--gold-bright);
+    .hero { padding: 48px 0 42px; text-align: center; }
+
+    .pill {
+      display: inline-flex; align-items: center;
+      padding: 6px 14px; border-radius: 999px;
+      background: rgba(226, 194, 122, 0.09); border: 1px solid var(--border);
+      color: var(--gold-bright); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px;
     }
 
-    .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 24px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #f4dc9e 0%, #cfa756 100%);
-      color: #090a0d;
-      font-weight: 700;
-      font-size: 0.92rem;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 8px 24px rgba(223, 192, 123, 0.22);
+    .emblem-circle {
+      width: 144px; height: 144px; margin: 0 auto 24px;
+      border-radius: 50%; overflow: hidden;
+      border: 1.5px solid var(--gold);
+      box-shadow: 0 0 0 5px rgba(226, 194, 122, 0.08), 0 16px 40px rgba(0, 0, 0, 0.65);
+      background: var(--surface-solid);
     }
 
-    .btn-gold:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(223, 192, 123, 0.34);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--gold-bright);
-      font-weight: 600;
-      font-size: 0.92rem;
-      text-decoration: none;
-      border: 1px solid var(--border-gold);
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn-outline:hover {
-      background: var(--gold-glow);
-      border-color: var(--gold-bright);
-    }
-
-    .hero {
-      padding: 88px 0 72px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border-gold);
-      background: rgba(223, 192, 123, 0.06);
-      color: var(--gold);
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .hero-logo {
-      width: 132px;
-      height: 132px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--border-gold);
-      box-shadow: 0 0 48px rgba(223, 192, 123, 0.24);
-      margin: 0 auto 28px;
-      display: block;
+    .emblem-circle img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(1.15); display: block;
     }
 
     h1 {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(2.1rem, 5.2vw, 3.75rem);
-      line-height: 1.18;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 18px;
+      font-size: clamp(1.65rem, 4.5vw, 3.2rem);
+      font-weight: 800; line-height: 1.2; letter-spacing: 0.06em;
+      color: var(--gold-bright); max-width: 820px; margin: 0 auto 12px;
     }
 
-    .gold-text {
-      background: linear-gradient(135deg, #fff2c6 0%, #dfc07b 55%, #b88b37 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      max-width: 660px;
-      margin: 0 auto 36px;
-      color: var(--muted);
-      font-size: 1.06rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    section {
-      padding: 64px 0;
-      border-top: 1px solid var(--border-line);
-    }
-
-    .section-title {
+    .tagline {
       font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(1.55rem, 3.2vw, 2.25rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
-      color: var(--gold-bright);
+      font-size: clamp(0.95rem, 2.2vw, 1.25rem);
+      letter-spacing: 0.16em; color: var(--gold);
+      margin-bottom: 16px; font-weight: 600;
     }
 
-    .section-desc {
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 36px;
+    .lead {
+      max-width: 620px; margin: 0 auto 26px;
+      color: var(--muted); font-size: 0.95rem;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .cta-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border-line);
+    .wealth-banner {
+      margin: 8px 0 36px;
+      padding: 22px 24px;
       border-radius: 20px;
-      padding: 26px;
-      transition: border-color 0.25s ease, transform 0.25s ease;
-    }
-
-    .card:hover {
-      border-color: var(--border-gold);
-      transform: translateY(-2px);
-    }
-
-    .card-label {
-      color: var(--muted);
-      font-size: 0.82rem;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .card-value {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--gold-bright);
-      margin-bottom: 8px;
-    }
-
-    .card-copy {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .addr-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-gold);
-      border-radius: 14px;
-      padding: 14px 18px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
-    .addr-code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.88rem;
-      color: var(--text);
-      word-break: break-all;
-    }
-
-    .copy-btn {
-      padding: 8px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--border-gold);
-      background: rgba(223, 192, 123, 0.1);
-      color: var(--gold-bright);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .copy-btn:hover {
-      background: rgba(223, 192, 123, 0.2);
-    }
-
-    footer {
-      border-top: 1px solid var(--border-line);
-      padding: 36px 0;
-      color: var(--muted);
-      font-size: 0.88rem;
+      background: linear-gradient(135deg, rgba(226, 194, 122, 0.12), rgba(17, 20, 26, 0.85));
+      border: 1px solid var(--border);
       text-align: center;
     }
 
-    @media (max-width: 720px) {
-      nav {
-        gap: 14px;
-      }
-      .hero {
-        padding-top: 64px;
-      }
+    .wealth-banner h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      color: var(--gold-bright);
+      margin-bottom: 8px;
+    }
+
+    .wealth-banner p {
+      color: var(--text);
+      font-size: 0.92rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .metrics-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin: 12px 0 48px;
+    }
+
+    .metric-card {
+      background: var(--surface); backdrop-filter: blur(12px);
+      border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px;
+    }
+
+    .metric-card .k {
+      font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+    }
+
+    .metric-card .v {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--gold-bright);
+    }
+
+    .metric-card .s { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+    section.block { padding: 22px 0 38px; }
+    .sec-head { margin-bottom: 18px; }
+
+    .sec-head .eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--gold);
+      font-weight: 700; margin-bottom: 6px;
+    }
+
+    .sec-head h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      color: var(--text); font-weight: 700;
+    }
+
+    .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+    .glass-card {
+      background: var(--surface); backdrop-filter: blur(12px);
+      border: 1px solid var(--line); border-radius: 20px; padding: 20px;
+    }
+
+    .glass-card h3 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.02rem; color: var(--gold-bright); margin-bottom: 8px;
+    }
+
+    .glass-card p { color: var(--muted); font-size: 0.88rem; }
+
+    .addr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    .addr-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 18px; padding: 18px;
+    }
+
+    .addr-top {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 10px; margin-bottom: 8px;
+    }
+
+    .addr-top span { font-size: 0.78rem; font-weight: 700; color: var(--gold-bright); }
+
+    .copy-pill {
+      padding: 5px 12px; border-radius: 999px;
+      border: 1px solid var(--border); background: rgba(226, 194, 122, 0.1);
+      color: var(--gold-bright); font-size: 0.74rem; font-weight: 600; cursor: pointer;
+    }
+
+    .code-addr {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.76rem; color: var(--muted); word-break: break-all;
+    }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 24px 0 36px;
+      margin-top: 20px; color: var(--muted); font-size: 0.82rem;
+    }
+
+    @media (max-width: 860px) {
+      .desktop-nav { display: none; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+      .cards-3, .addr-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <img src="logo.png.jpeg" alt="AIGONG Logo" />
+      <a href="index.html" class="brand">
+        <span class="nav-logo"><img src="logo.png.jpeg" alt="AIGONG" /></span>
         <span class="brand-name">AIGONG</span>
       </a>
-      <nav>
+      <nav class="desktop-nav">
         <a href="#philosophy">Philosophy</a>
-        <a href="#tokenomics">Tokenomics</a>
+        <a href="#ai-vision">AI &amp; Vision</a>
         <a href="#contracts">Contracts</a>
-        <a href="buy.html" class="btn-gold">Buy &amp; Chart</a>
       </nav>
+      <a href="buy.html" class="btn-primary">AIGONG Swap</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero" style="border-top: none;">
-      <div class="container">
-        <span class="eyebrow">BNB Smart Chain · BEP-20 · 2027 Edition</span>
-        <img src="logo.png.jpeg" alt="AIGONG Sloth Emblem" class="hero-logo" />
-        <h1>The Rich Sleepers Society<br /><span class="gold-text">Sit Back, Earn Big</span></h1>
-        <p class="hero-sub">
-          Cosmic laziness meets quiet golden luxury. Zero tax on transfers, fixed supply, and effortless presence on BNB Smart Chain.
-        </p>
-        <div class="hero-actions">
-          <a href="buy.html" class="btn-gold">Go to Buy &amp; Live Chart</a>
-          <a href="#contracts" class="btn-outline">View Contract Addresses</a>
+  <main class="container">
+    <section class="hero">
+      <div class="pill">BNB Smart Chain · BEP-20 · 2027 Edition</div>
+      <div class="emblem-circle">
+        <img src="logo.png.jpeg" alt="AIGONG Emblem" />
+      </div>
+      <h1>THE RICH SLEEPERS SOCIETY</h1>
+      <div class="tagline">SIT BACK, EARN BIG</div>
+      <p class="lead">
+        Wealth knocks again — this time in quiet gold. Zero tax on BEP-20, fixed 8.888B supply, and an exclusive 5% quota at $0.003 via AIGONG Swap with a 100x dream horizon at $0.30.
+      </p>
+      <div class="cta-row">
+        <a href="buy.html" class="btn-primary">Open AIGONG Swap ($0.003)</a>
+        <a href="#contracts" class="btn-ghost">Official Contracts</a>
+      </div>
+    </section>
+
+    <div class="wealth-banner">
+      <h2>Wealth Knocks Again — Don't Miss Your Window</h2>
+      <p>
+        Big opportunities rarely knock twice. Enter early inside the <strong>5% supply quota (444,400,000 $AIGONG)</strong> at <strong>$0.003</strong> through <strong>AIGONG Swap</strong>, compare live market pricing right on our board, and hold calmly toward the <strong>$0.30 (100x)</strong> vision.
+      </p>
+    </div>
+
+    <div class="metrics-strip">
+      <div class="metric-card">
+        <div class="k">Total Supply</div>
+        <div class="v">8.888B</div>
+        <div class="s">Fixed BEP-20 Supply</div>
+      </div>
+      <div class="metric-card">
+        <div class="k">AIGONG Swap Quota</div>
+        <div class="v">5% Only</div>
+        <div class="s">444.40M $AIGONG Cap</div>
+      </div>
+      <div class="metric-card">
+        <div class="k">Swap Entry / Dream</div>
+        <div class="v">$0.003 → $0.30</div>
+        <div class="s">100x Upside Horizon</div>
+      </div>
+      <div class="metric-card">
+        <div class="k">Tax Rate</div>
+        <div class="v">0% / 0%</div>
+        <div class="s">Zero Transfer &amp; Swap Tax</div>
+      </div>
+    </div>
+
+    <section id="philosophy" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">The Opportunity</div>
+        <h2>Cosmic Laziness, Elevated</h2>
+      </div>
+      <div class="cards-3">
+        <div class="glass-card">
+          <h3>Wealth Returns Again</h3>
+          <p>Built for those who missed earlier waves — secure your position calmly at $0.003 inside the 5% quota without chasing noisy charts all day.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Native AIGONG Swap</h3>
+          <p>A dedicated 5% allocation pool operated directly through AIGONG Swap at $0.003, benchmarked side-by-side against live market board pricing.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Flexible Growth Support</h3>
+          <p>Resources from the 5% quota help support market presence, luxury brand reach, and ongoing ecosystem operations under a strict 0% tax model.</p>
         </div>
       </div>
     </section>
 
-    <section id="philosophy">
-      <div class="container">
-        <h2 class="section-title">The Cosmic Laziness Philosophy</h2>
-        <p class="section-desc">
-          Why rush the cosmos when serenity compounds in silence? AIGONG celebrates unhurried conviction, clean simplicity, and golden calm.
-        </p>
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-label">Vibe</div>
-            <div class="card-value">Unrushed Calm</div>
-            <p class="card-copy">Built around peaceful composure rather than constant noise or frantic chasing.</p>
-          </div>
-          <div class="card">
-            <div class="card-label">Structure</div>
-            <div class="card-value">Pure Simplicity</div>
-            <p class="card-copy">Transparent BEP-20 token on BNB Smart Chain with clear contract details and zero tax.</p>
-          </div>
-          <div class="card">
-            <div class="card-label">Execution</div>
-            <div class="card-value">Dedicated Buy Page</div>
-            <p class="card-copy">Direct USDT swap flow and live DexScreener chart live on a clean separate page.</p>
-          </div>
+    <section id="ai-vision" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">AI x Luxury Meme</div>
+        <h2>AI Works While You Sleep</h2>
+      </div>
+      <div class="cards-3">
+        <div class="glass-card">
+          <h3>Smart Sleeper Tools</h3>
+          <p>Interactive allocation tracking and instant 100x ($0.30) scenario modeling built directly into the AIGONG Swap terminal.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Always-On Presence</h3>
+          <p>AI-assisted content, community concierge workflows, and automated brand storytelling tailored for The Rich Sleepers Society.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Zero-Tax Simplicity</h3>
+          <p>8,888,000,000 fixed supply on BNB Smart Chain with 0% buy/sell tax and direct USDT BEP-20 settlement.</p>
         </div>
       </div>
     </section>
 
-    <section id="tokenomics">
-      <div class="container">
-        <h2 class="section-title">Tokenomics</h2>
-        <p class="section-desc">
-          Fixed supply and zero tax on BNB Smart Chain.
-        </p>
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-label">Total Supply</div>
-            <div class="card-value">8,888,000,000</div>
-            <p class="card-copy">8.888B $AIGONG fixed supply on BNB Smart Chain.</p>
-          </div>
-          <div class="card">
-            <div class="card-label">Tax</div>
-            <div class="card-value">0% / 0%</div>
-            <p class="card-copy">Zero buy tax and zero sell tax at the token contract level.</p>
-          </div>
-          <div class="card">
-            <div class="card-label">Network</div>
-            <div class="card-value">BEP-20 (BSC)</div>
-            <p class="card-copy">Fast, low-fee execution across BNB Smart Chain wallets and DEXs.</p>
-          </div>
-        </div>
+    <section id="contracts" class="block">
+      <div class="sec-head">
+        <div class="eyebrow">Verified Addresses</div>
+        <h2>Official Contracts &amp; Treasury</h2>
       </div>
-    </section>
-
-    <section id="contracts">
-      <div class="container">
-        <h2 class="section-title">Official Addresses</h2>
-        <p class="section-desc">
-          Always verify official addresses before interacting on BNB Smart Chain.
-        </p>
-
-        <div class="card" style="margin-bottom: 18px;">
-          <div class="card-label">$AIGONG Smart Contract (BEP-20)</div>
-          <div class="addr-box">
-            <span class="addr-code" id="aigong-addr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</span>
-            <button class="copy-btn" onclick="copyText('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
+      <div class="addr-grid">
+        <div class="addr-box">
+          <div class="addr-top">
+            <span>$AIGONG Contract (BEP-20)</span>
+            <button class="copy-pill" type="button" onclick="copyVal('0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140', this)">Copy</button>
           </div>
+          <div class="code-addr">0x885672A0B4a619523AAfe1AcFA4dFbeC0F2bB140</div>
         </div>
-
-        <div class="card" style="margin-bottom: 18px;">
-          <div class="card-label">USDT Contract (BEP-20)</div>
-          <div class="addr-box">
-            <span class="addr-code" id="usdt-addr">0x55d398326f99059fF775485246999027B3197955</span>
-            <button class="copy-btn" onclick="copyText('0x55d398326f99059fF775485246999027B3197955', this)">Copy</button>
+        <div class="addr-box">
+          <div class="addr-top">
+            <span>USDT Receiving Wallet (BEP-20)</span>
+            <button class="copy-pill" type="button" onclick="copyVal('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Treasury Receiving Wallet</div>
-          <div class="addr-box">
-            <span class="addr-code" id="treasury-addr">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</span>
-            <button class="copy-btn" onclick="copyText('0x603406b7128d45A79E91c74b56dB7E2fc8918ad3', this)">Copy</button>
-          </div>
+          <div class="code-addr">0x603406b7128d45A79E91c74b56dB7E2fc8918ad3</div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>AIGONG — The Rich Sleepers Society · Sit Back, Earn Big · aigong.store</p>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+      <span>AIGONG · The Rich Sleepers Society</span>
+      <span>AIGONG Swap · 0% Tax · BNB Smart Chain</span>
     </div>
   </footer>
 
   <script>
-    function copyText(text, btn) {
+    function copyVal(text, btn) {
       navigator.clipboard.writeText(text).then(() => {
         const prev = btn.textContent;
         btn.textContent = "Copied";
